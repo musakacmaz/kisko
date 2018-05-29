@@ -1,0 +1,41 @@
+<ion-header>
+
+  <ion-navbar color="navcolor">
+    <ion-title>Hesabım</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+
+  <button ion-item (click)="doChangePasswordPrompt()" *ngIf="islogin.loginState">
+    <ion-icon name="key" item-start></ion-icon>
+    <ion-label>Şifre Değiştir</ion-label>
+  </button>
+
+  <button ion-item (click)="openDoctorMode()" *ngIf="islogin.secondrole === 'doctor'">
+    <ion-icon name="swap" item-start></ion-icon>
+    <ion-label>Doktor Moduna Geç</ion-label>
+  </button>
+
+  <button ion-item (click)="openPatientMode()" *ngIf="islogin.role === 'doctor'">
+    <ion-icon name="swap" item-start></ion-icon>
+    <ion-label>Hasta Moduna Geç</ion-label>
+  </button>
+
+  <button ion-item (click)="presentPopover($event)" *ngIf="islogin.role === 'patient'">
+    <ion-icon name="people" item-start></ion-icon>
+    <ion-label>Kullanıcı Değiştir</ion-label>
+  </button>
+
+  <button ion-item (click)="showPrompt()" *ngIf="islogin.role === 'doctor'">
+    <ion-icon name="add" item-start></ion-icon>
+    <ion-label>Sekreter Ekle</ion-label>
+  </button>
+
+  <button ion-item (click)="showConfirm()">
+    <ion-icon name="log-out" item-start></ion-icon>
+    <ion-label>Çıkış Yap</ion-label>
+  </button>
+
+</ion-content>

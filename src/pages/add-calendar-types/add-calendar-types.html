@@ -1,0 +1,50 @@
+<ion-header>
+
+  <ion-navbar color="navcolor">
+      <ion-buttons left>
+          <button ion-button (click)="cancel()">
+            Vazgeç
+          </button>
+        </ion-buttons>
+    <ion-title>Yeni Randevu Türü</ion-title>
+    <ion-buttons end>
+        <button ion-button (click)="save()">
+          Kaydet
+        </button>
+      </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+  <ion-list>
+
+    <ion-item>
+        <ion-label stacked color="primary"> Randevu Türü </ion-label>
+        <ion-input [(ngModel)]="typeinfo.isim" clearInput="true"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked color="primary"> Süre </ion-label>
+        <ion-select [(ngModel)]="typeinfo.sure" interface="popover">
+          <ion-option value="15" selected="true">15 Dakika</ion-option>
+          <ion-option value="30">30 Dakika</ion-option>
+          <ion-option value="45">45 Dakika</ion-option>
+          <ion-option value="60">1 Saat</ion-option>
+          <ion-option value="120">2 Saat</ion-option>
+          <ion-option value="240">4 Saat</ion-option>
+          <ion-option value="0">Tam Gün</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked color="primary"> Renk </ion-label>
+        <ion-select [(ngModel)]="typeinfo.renk" interface="popover">
+          <ion-option *ngFor="let color of colors" value="{{color.renkid}}">{{color.renkadi}}</ion-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+
+</ion-content>

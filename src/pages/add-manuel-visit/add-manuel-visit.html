@@ -1,0 +1,44 @@
+<ion-header>
+
+  <ion-navbar color="navcolor">
+    <ion-title> Kayıt Ekle </ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="addManuelVisit()">
+        Kaydet
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+
+    <form [formGroup]="form" (ngSubmit)="addManuelVisit()">
+
+      <ion-item>
+        <ion-label color="primary" stacked> Tarih </ion-label>
+        <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="D MMMM YYYY" cancelText="Vazgeç"
+          doneText="Tamam" formControlName="tarih" [class.invalid]="(!form.controls.tarih.valid && submitAttempt)"></ion-datetime>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="primary" stacked> Kurum </ion-label>
+        <ion-input type="text" clearInput="true" formControlName="kurum" [class.invalid]="(!form.controls.kurum.valid && submitAttempt)"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="primary" stacked> Doktor </ion-label>
+        <ion-input type="text" clearInput="true" formControlName="doktor" [class.invalid]="(!form.controls.doktor.valid && submitAttempt)"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="primary" stacked> Açıklama </ion-label>
+        <ion-input type="text" clearInput="true" formControlName="aciklama" [class.invalid]="(!form.controls.aciklama.valid && submitAttempt)"></ion-input>
+      </ion-item>
+
+    </form>
+  </ion-list>
+
+</ion-content>

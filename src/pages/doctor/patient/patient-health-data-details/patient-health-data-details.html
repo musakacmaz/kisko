@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-navbar color="navcolor">
+    <ion-title> {{data_name}} Verisi</ion-title>
+    <ion-buttons end>
+      <button ion-button *ngIf="isDoctor && !isFollowing" (click)="followData()">
+        Takip Et
+      </button>
+    </ion-buttons>
+    <ion-buttons end>
+      <button ion-button *ngIf="isDoctor && isFollowing" (click)="showFollowConfirm()">
+        Takibi Bırak
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+
+  <h2 align="middle" *ngIf="isEmpty"> Veri Yok</h2>
+
+
+  <ion-list *ngIf="!isEmpty">
+
+    <ion-item-sliding *ngFor="let measurement of measurements" no-details text-wrap>
+
+      <ion-item>
+
+        <h2>{{measurement.deger}} {{measurement.birimi}}</h2>
+        <p item-right>{{measurement.formatted}}</p>
+
+      </ion-item>
+
+      <ion-item-options side="right">
+
+        <button ion-button color="secondary" (click)="showPrompt(measurement.deger, measurement.birimi, measurement.olcumzamani, measurement.olcumid)">
+          <ion-icon name="create"></ion-icon>
+          &nbsp; Düzenle &nbsp;
+        </button>
+
+        <button ion-button color="danger" (click)="showConfirm(measurement.olcumid)">
+          <ion-icon name="trash"></ion-icon>
+          &nbsp;&nbsp; Sil &nbsp;&nbsp;
+        </button>
+
+      </ion-item-options>
+
+    </ion-item-sliding>
+
+  </ion-list>
+  <!-->
+  <canvas #barCanvas *ngIf="visible"></canvas>
+  <!-->
+  <ion-fab right bottom>
+    <button ion-fab (click)="addData()">
+      <ion-icon name="add"></ion-icon>
+    </button>
+  </ion-fab>
+</ion-content>

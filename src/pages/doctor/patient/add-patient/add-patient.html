@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-navbar color="navcolor">
+    <ion-title>
+      Yeni Hasta Ekleme
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="addPatient()" text-capitalize> Ekle
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list no-lines>
+  <ion-item>
+    <ion-label color="primary" stacked> TC Kimlik No</ion-label>
+    <ion-input [(ngModel)]="patientinfo.hastatc" type="number" clearInput="true"></ion-input>
+  </ion-item>
+
+  <ion-item *ngIf="isNotAvailable">
+    <ion-label stacked color="primary"> Adı </ion-label>
+    <ion-input [(ngModel)]="patientinfo.name" type="text" clearInput="true"></ion-input>
+  </ion-item>
+
+  <ion-item *ngIf="isNotAvailable">
+    <ion-label stacked color="primary"> Soyadı </ion-label>
+    <ion-input [(ngModel)]="patientinfo.surname" type="text" clearInput="true"></ion-input>
+  </ion-item>
+
+  <ion-item *ngIf="isNotAvailable">
+    <ion-label stacked color="primary"> Doğum Tarihi </ion-label>
+    <ion-datetime [(ngModel)]="patientinfo.birthdate" displayFormat="DD/MM/YYYY" pickerFormat="DD MM YYYY" cancelText="Vazgeç" doneText="Tamam"></ion-datetime>
+  </ion-item>
+</ion-list>
+</ion-content>

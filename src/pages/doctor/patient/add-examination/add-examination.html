@@ -1,0 +1,81 @@
+<ion-header>
+  <ion-navbar color="navcolor">
+    <ion-title>Yeni Muayene</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="addMuayene()" text-capitalize>
+        Kaydet
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+
+</ion-header>
+
+
+<ion-content>
+
+  <ion-list no-lines>
+
+    <ion-item>
+      <ion-label color="primary" stacked> Tarih </ion-label>
+      <ion-datetime [(ngModel)]="muayeneinfo.tarih" displayFormat="DD/MM/YYYY" pickerFormat="D MMMM YYYY" cancelText="Vazgeç" doneText="Tamam"></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+        <ion-label color="primary" stacked>Yakınma</ion-label>
+        <ion-textarea [(ngModel)]="muayeneinfo.yakinma" clearInput="true"></ion-textarea>
+      </ion-item>
+
+
+    <ion-item>
+      <ion-label color="primary" stacked>Öykü</ion-label>
+      <ion-textarea [(ngModel)]="muayeneinfo.oyku" clearInput="true"></ion-textarea>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-label color="primary" stacked>Bulgular</ion-label>
+      <ion-textarea [(ngModel)]="muayeneinfo.bulgular" clearInput="true"></ion-textarea>
+    </ion-item>
+
+
+    <ion-item>
+        <ion-label color="primary" stacked>Sonuç</ion-label>
+        <ion-textarea [(ngModel)]="muayeneinfo.sonuc" clearInput="true"></ion-textarea>
+      </ion-item>
+
+
+    <ion-item>
+      <ion-label color="primary" stacked>Tanı</ion-label>
+      <ion-input [(ngModel)]="muayeneinfo.tani" clearInput="true"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label color="primary" stacked>Kontrol Tarihi </ion-label>
+        <ion-datetime [(ngModel)]="muayeneinfo.kontroltarihi" displayFormat="DD/MM/YYYY" pickerFormat="D MMMM YYYY" cancelText="Vazgeç" doneText="Tamam"></ion-datetime>
+      </ion-item>
+
+      <ion-item>
+          <ion-label color="primary" stacked>Kontrol Notları</ion-label>
+          <ion-input [(ngModel)]="muayeneinfo.kontrol" clearInput="true"></ion-input>
+        </ion-item>
+
+
+    <ion-item>
+      <ion-label color="primary" stacked>Size Özel Notlar</ion-label>
+      <ion-textarea [(ngModel)]="muayeneinfo.aciklama" clearInput="true"></ion-textarea>
+    </ion-item>
+
+  </ion-list>
+
+  <ion-list *ngIf="!isEmpty" no-lines>
+
+    <ion-item *ngFor="let area of areas" no-details text-wrap>
+      <ion-label color="primary" stacked>{{area.sahaadi}}</ion-label>
+      <ion-textarea rows="3" [(ngModel)]="area.deger1" clearInput="true"></ion-textarea>
+    </ion-item>
+
+  </ion-list>
+
+
+</ion-content>

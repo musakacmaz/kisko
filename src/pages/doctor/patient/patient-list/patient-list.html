@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-navbar color="navcolor">
+
+    <ion-title *ngIf="!isOn">
+      Hastalarım
+    </ion-title>
+
+    <ion-searchbar *ngIf="isOn" (ionInput)="getPatients($event)" placeholder="Hasta Ara"></ion-searchbar>
+
+    <ion-buttons end>
+      <button ion-button icon-only (click)="toggleDetails()">
+        <ion-icon name="search"></ion-icon>
+      </button>
+      <button ion-button icon-only (click)="present()">
+        <ion-icon name="options"></ion-icon>
+      </button>
+    </ion-buttons>
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content pullingIcon="refresh" refreshingSpinner="circles" pullMax=400></ion-refresher-content>
+  </ion-refresher>
+
+  <h2 align="middle" *ngIf="isEmpty">Hasta Yok</h2>
+
+  <ion-list *ngIf="!isEmpty">
+    <button ion-item *ngFor="let patient of patients" (click)="itemTapped(patient.hastatc, patient.hastaadi, patient.hastasoyadi)">
+
+      <ion-avatar item-start>
+        <img *ngIf="patient.hastafoto !== null" src="{{patient.hastafoto}}" />
+        <img *ngIf="patient.hastacinsiyet === 'erkek' && patient.hastafoto === null || patient.hastacinsiyet === 'Erkek' && patient.hastafoto === null" src="assets/icon/male.png" />
+        <img *ngIf="patient.hastacinsiyet === 'kadın' && patient.hastafoto === null || patient.hastacinsiyet === 'Kadın' && patient.hastafoto === null" src="assets/icon/female.png" />
+      </ion-avatar>
+
+      <h2>{{ patient.hastaadi }} {{ patient.hastasoyadi }}</h2>
+
+      <p *ngIf="patient.hastameslek !== null">  {{patient.tarih}} • {{ patient.hastameslek }} • {{ patient.hastayas }} </p>
+
+      <p *ngIf="patient.hastameslek === null">  {{patient.tarih}} • {{ patient.hastayas }} </p>
+
+    </button>
+
+  </ion-list>
+  <ion-fab right bottom>
+    <button ion-fab (click)="goAddPatient()">
+      <ion-icon name="add"></ion-icon>
+    </button>
+  </ion-fab>
+
+</ion-content>

@@ -1,0 +1,208 @@
+<ion-header>
+  <ion-navbar color="navcolor">
+    <ion-title> Muayene Detayları</ion-title>
+    <ion-buttons end *ngIf="isOwnDoctor">
+      <button ion-button (click)="updateExamination()">
+        Kaydet
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <p align="middle">{{userkey}}</p>
+
+  <ion-list no-lines>
+
+    <ion-item>
+      <ion-label stacked color="primary"> Tarih </ion-label>
+      <ion-datetime [(ngModel)]="examination[0].tarih" displayFormat="DD/MM/YYYY" pickerFormat="D MMMM YYYY" cancelText="Vazgeç"
+      doneText="Tamam" *ngIf="isOwnDoctor"></ion-datetime>
+      <ion-input [(ngModel)]="examination[0].formatted" readonly="true" *ngIf="!isOwnDoctor"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked color="primary">Yakınma</ion-label>
+      <ion-textarea rows="4" [(ngModel)]="examination[0].yakinma" *ngIf="isOwnDoctor"></ion-textarea>
+      <ion-textarea rows="4" [(ngModel)]="examination[0].yakinma" readonly="true" *ngIf="!isOwnDoctor"></ion-textarea>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked color="primary">Öykü</ion-label>
+      <ion-textarea rows="4" [(ngModel)]="examination[0].oyku" *ngIf="isOwnDoctor"></ion-textarea>
+      <ion-textarea rows="4" [(ngModel)]="examination[0].oyku" readonly="true" *ngIf="!isOwnDoctor"></ion-textarea>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked color="primary">Bulgular</ion-label>
+      <ion-textarea rows="4" [(ngModel)]="examination[0].bulgular" *ngIf="isOwnDoctor"></ion-textarea>
+      <ion-textarea rows="4" [(ngModel)]="examination[0].bulgular" readonly="true" *ngIf="!isOwnDoctor"></ion-textarea>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked color="primary">Sonuç</ion-label>
+      <ion-textarea rows="4" [(ngModel)]="examination[0].sonuc" *ngIf="isOwnDoctor"></ion-textarea>
+      <ion-textarea rows="4" [(ngModel)]="examination[0].sonuc" readonly="true" *ngIf="!isOwnDoctor"></ion-textarea>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked color="primary">Tanı</ion-label>
+      <ion-input [(ngModel)]="examination[0].tani" *ngIf="isOwnDoctor"></ion-input>
+      <ion-input [(ngModel)]="examination[0].tani" readonly="true" *ngIf="!isOwnDoctor"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked color="primary" *ngIf="isOwnDoctor">Size Özel Notlar</ion-label>
+      <ion-textarea rows="4" [(ngModel)]="examination[0].aciklama" *ngIf="isOwnDoctor"></ion-textarea>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked color="primary"> Kontrol Tarihi </ion-label>
+      <ion-datetime [(ngModel)]="examination[0].kontroltarihi" displayFormat="DD/MM/YYYY" pickerFormat="D MMMM YYYY" cancelText="Vazgeç"
+      doneText="Tamam" *ngIf="isOwnDoctor"></ion-datetime>
+      <ion-input [(ngModel)]="examination[0].formattedkontrol" readonly="true" *ngIf="!isOwnDoctor"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked color="primary">Kontrol Notları</ion-label>
+      <ion-textarea clearInput="true" rows="4" [(ngModel)]="examination[0].kontrol" *ngIf="isOwnDoctor"></ion-textarea>
+      <ion-textarea clearInput="true" rows="4" [(ngModel)]="examination[0].kontrol" readonly="true" *ngIf="!isOwnDoctor"></ion-textarea>
+    </ion-item>
+
+  </ion-list>
+
+  <ion-list *ngIf="!isEmptyArea" no-lines>
+
+    <ion-item *ngFor="let area of areas" no-details text-wrap>
+      <ion-label color="primary" stacked>{{area.sahaadi}}</ion-label>
+      <ion-textarea rows="3" [(ngModel)]="area.deger1" clearInput="true" *ngIf="isOwnDoctor"></ion-textarea>
+      <ion-textarea rows="3" [(ngModel)]="area.deger1" clearInput="true" readonly="true" *ngIf="!isOwnDoctor"></ion-textarea>
+    </ion-item>
+
+  </ion-list>
+
+  <!-->********** MUAYENE DETAYLARI BURADA BİTİYOR ***********
+  <!-->
+
+  <ion-list>
+    <h1 padding>Lab İstekleri</h1>
+    <ion-item-sliding *ngFor="let labrequest of labrequests">
+
+      <ion-item>
+        <h2>{{labrequest.kurumadi}}</h2>
+        <h3>{{labrequest.istem}}</h3>
+        <p>{{labrequest.istektarih}}</p>
+        <p item-end *ngIf="labrequest.durum === '1'">Bekliyor</p>
+        <button ion-button item-end *ngIf="labrequest.durum === '2'" clear (click)="openDocument(labrequest.belgeurl)">
+          İncele
+        </button>
+        <p item-end *ngIf="labrequest.durum === '3'">İptal Edildi</p>
+      </ion-item>
+
+      <ion-item-options side="right" *ngIf="labrequest.durum !== '2' && isOwnDoctor">
+        <button ion-button color="danger" (click)="deleteLabRequest(labrequest.labistekid)">
+          <ion-icon name="trash"></ion-icon>
+          İsteği Sil
+        </button>
+      </ion-item-options>
+
+    </ion-item-sliding>
+
+  </ion-list>
+  <button ion-item detail-none (click)="goAddLab()" *ngIf="isOwnDoctor">
+    <ion-icon name="add" color="primary" item-end></ion-icon>
+    <ion-label color="primary">Yeni Lab İsteği</ion-label>
+  </button>
+  <!-->****** LAB İSTEKLERİ BURADA BİTİYOR ***********
+  <!-->
+
+  <ion-list>
+      <h1 padding>Belgeler</h1>
+    <ion-item-sliding *ngFor="let document of documents">
+      <ion-item>
+        <img item-left height="48 px" width="48 px" *ngIf="document.extension === 'pdf'" src="assets/image/pdf.png">
+        <img item-left height="48 px" width="48 px" *ngIf="document.extension === 'jpg'" src="assets/image/image.png">
+        <img item-left height="48 px" width="48 px" *ngIf="document.extension === 'doc'" src="assets/image/doc.png">
+        <img item-left height="48 px" width="48 px" *ngIf="document.extension === 'docx'" src="assets/image/doc.png">
+
+        <h2>{{document.baslik}}</h2>
+        <p *ngIf="document.aciklama !== null">{{document.aciklama}}
+          <br> {{document.tarih}}
+        </p>
+
+        <p *ngIf="document.aciklama === null">
+          {{document.tarih}}
+        </p>
+        <button ion-button item-end clear (click)="openDocument(document.url)" *ngIf="document.url">
+          Görüntüle
+        </button>
+
+      </ion-item>
+      <ion-item-options side="right" *ngIf="isOwnDoctor">
+        <button ion-button color="danger" (click)="deleteDocument(document.belgeid)">
+          <ion-icon name="trash"></ion-icon>
+          &nbsp;&nbsp; Sil &nbsp;&nbsp;
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+
+  </ion-list>
+
+  <button ion-item detail-none (click)="presentActionSheet()" *ngIf="isOwnDoctor">
+      <ion-icon name="add" color="primary" item-end></ion-icon>
+      <ion-label color="primary">Belge Ekle</ion-label>
+    </button>
+
+    <button ion-item detail-none (click)="goAddComment()" *ngIf="!isOwnDoctor && !isDoctor && isEmptyComment">
+      <ion-icon name="chatboxes" color="primary" item-end></ion-icon>
+      <ion-label color="primary">Yorum Yap</ion-label>
+    </button>
+
+  <ion-list *ngIf="!isEmptyComment">
+    <ion-toolbar>
+      <h1 padding>Muayene Yorumu ve Puanı</h1>
+    </ion-toolbar>
+
+    <ion-item text-wrap>
+      <p>{{comment[0].yorumtext}}</p>
+      <rating [(ngModel)]="comment[0].puan" readOnly="true" max="5" emptyStarIconName="star-outline" halfStarIconName="star-half"
+        starIconName="star" nullable="false">
+      </rating>
+    </ion-item>
+  </ion-list>
+
+</ion-content>
+
+<!-->
+
+<ion-fab right bottom (click)="showMenuItems()" #fab *ngIf="this.type === 1">
+  <button ion-fab color="primary">
+    <ion-icon name="create"></ion-icon>
+  </button>
+  <ion-fab-list side="top">
+    <button ion-fab (click)="itemTapped(1, fab, 2)">
+      <ion-icon name="flask"></ion-icon>
+    </button>
+    <button ion-fab>
+      <ion-icon name="body"></ion-icon>
+    </button>
+    <button ion-fab>
+      <ion-icon name="book"></ion-icon>
+    </button>
+  </ion-fab-list>
+</ion-fab>
+<div class="labelContainer" *ngIf="showMenuItem">
+  <div class="container">
+    <a>
+      <div class="label">Öyküsünü Güncelle</div>
+    </a>
+    <a>
+      <div class="label">Bulgu Ekle</div>
+    </a>
+    <a (click)="itemTapped(1, fab, 1)">
+      <div class="label">Laboratuvar Ekle</div>
+    </a>
+  </div>
+</div>
+<!-->

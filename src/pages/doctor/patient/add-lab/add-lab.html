@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-navbar color="navcolor">
+    <ion-buttons left>
+      <button ion-button (click)="cancel()">
+        Vazgeç
+      </button>
+    </ion-buttons>
+    <ion-title>
+      Lab İsteği
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="requestLab()">
+        Gönder
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-item>
+      <ion-label stacked color="primary">Kurum</ion-label>
+      <ion-select [(ngModel)]="labrequest.kurumid" multiple="false" cancelText="Vazgeç" okText="Tamam">
+        <ion-option *ngFor="let kurum of kurumlar" value="{{kurum.kurumid}}">{{kurum.kurumadi}}</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked color="primary">Açıklama</ion-label>
+      <ion-textarea [(ngModel)]="labrequest.istem"></ion-textarea>
+    </ion-item>
+
+</ion-content>

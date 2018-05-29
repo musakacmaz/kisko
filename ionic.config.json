@@ -1,0 +1,8 @@
+{
+  "name": "ksk",
+  "app_id": "894f6a6d",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}

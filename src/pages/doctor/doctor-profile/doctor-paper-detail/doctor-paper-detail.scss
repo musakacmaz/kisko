@@ -1,0 +1,29 @@
+page-doctor-paper-detail {
+
+    .title {
+        font-weight: bold;
+        color: black
+    }
+
+    .social {
+        font-weight: bold;
+    }
+
+    .buttons-row,
+  .buttons-col {
+    margin: 0;
+    padding: 0;
+  }
+
+  /* This class here overlays the file input above the "Upload Document" button in iOS
+  * Otherwise is not possible to trigger an File input element programmatically in iOS.
+  */
+  .ios-file-input{
+    position: absolute;
+    opacity: 0;
+    z-index: 1;
+    width: 100%;
+    min-height: 155px;  /*Height must be a bit less than the height of the "Upload Document" button.*/
+  }
+
+}

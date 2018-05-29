@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-navbar color="navcolor">
+    <ion-title>Kimlik Bilgileri</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+
+  <ion-list *ngIf="doctorinfo" no-lines>
+    <ion-item tappable>
+      <img src="{{doctorinfo[0].fotourl}}" class="pp"  (click)="openImage(doctorinfo[0].fotourl)" />
+      <button ion-button item-end (click)="presentActionSheet()">
+      <ion-icon name="camera"></ion-icon>
+      &nbsp; Fotoğraf Yükle
+    </button>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked color="primary">TC Kimlik No </ion-label>
+      <ion-input class="editable" readonly="true" [(ngModel)] = doctorinfo[0].doktortc></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked color="primary">Adı </ion-label>
+      <ion-input class="editable" readonly="true" [(ngModel)] = doctorinfo[0].name> </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked color="primary">Soyadı </ion-label>
+      <ion-input class="editable" readonly="true" [(ngModel)] = doctorinfo[0].surname>  </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked color="primary">Cinsiyet</ion-label>
+      <ion-input class="editable" readonly="true" [(ngModel)] = doctorinfo[0].gender> </ion-input>
+    </ion-item>
+
+  </ion-list>
+
+</ion-content>

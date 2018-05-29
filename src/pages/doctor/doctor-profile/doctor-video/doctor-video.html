@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-navbar color="navcolor">
+    <ion-title>Videolar</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="addVideo()" text-capitalize>
+        Ekle
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+
+  <h2 align="middle" *ngIf="isEmpty">Video Yok</h2>
+
+  <ion-list *ngIf="!isEmpty">
+
+    <ion-item *ngFor="let video of videos">
+
+      <h2>{{video.baslik}}</h2>
+      <p class="date2" text-right>{{video.gondermetarihi}}</p>
+      <br>
+      <h3>{{video.aciklama}}</h3>
+
+      <br>
+      <ion-row>
+        <ion-col col-4>
+          <button ion-button icon-left clear small>
+            <ion-icon name="thumbs-up"></ion-icon>
+            <div text-capitalize>{{video.begenme}}</div>
+          </button>
+        </ion-col>
+        <ion-col col-4>
+          <button ion-button icon-left clear small>
+            <ion-icon name="eye"></ion-icon>
+            <div text-capitalize>{{video.goruntuleme}}</div>
+          </button>
+        </ion-col>
+        <ion-col col-4>
+          <button ion-button icon-left clear small (click)="playVideo(video.url)">
+            <ion-icon name="play"></ion-icon>
+            <div text-capitalize>İzle</div>
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+
+  </ion-list>
+
+</ion-content>

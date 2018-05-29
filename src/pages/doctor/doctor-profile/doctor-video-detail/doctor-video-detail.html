@@ -1,0 +1,25 @@
+<ion-header>
+
+  <ion-navbar color="navcolor">
+    <ion-title>Video</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="editVideo(videos.id)">
+        Düzenle
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+    <p class="title">{{ videos.title }}</p>
+    <div>
+      <ion-icon *ngFor="let i of Arr(videos.stars).fill(1)" name="star"></ion-icon>
+      <ion-icon *ngFor="let i of Arr(star).fill(1)" name="star-outline"></ion-icon>
+    </div>
+    <p>Video izleme kutucuğu gelecek.</p>
+
+
+    <p class="social">{{ videos.view }} görüntülenme, {{ videos.like }} beğeni</p>
+</ion-content>

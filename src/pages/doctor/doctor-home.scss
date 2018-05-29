@@ -1,0 +1,78 @@
+page-doctor-home {
+
+  ion-avatar{
+
+    border: 1px solid;
+    border-radius: 50%;
+    border-color: #006ba0;
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  .icon{
+    font-size: 32px; //Preferred size here
+  }
+
+  .image-container{
+    background-size: cover;
+    min-height: 160px;
+    min-width: 160px;
+    border-color: #006ba0;
+    background-color: #f3f9fe;
+    border-radius: 12%;
+    margin: 8px;
+  }
+
+  .module-title{
+    //margin-top: -4%;
+    font-size: 1.7rem;
+    font-weight: 400;
+
+  }
+
+  .module-subtitle{
+    margin-top: -8%;
+    color: grey;
+  }
+
+
+  .avatar {
+
+        width: 100% !important;
+        height: 100% !important;
+        background-color: transparent;
+      }
+      .navbar {
+        max-height: 50px;
+        }
+
+  .card-background-page {
+
+            ion-card {
+              position: relative;
+              text-align: center;
+              max-height: 90px;
+            }
+
+            .card-title {
+              position: absolute;
+              top: 72%;
+              font-size: 2.0em;
+              width: 100%;
+              font-weight: bold;
+              color: black;
+              opacity: 0.6;
+              background-color: white
+            }
+
+            .card-subtitle {
+              font-size: 1.0em;
+              position: absolute;
+              top: 52%;
+              width: 100%;
+              color: #fff;
+            }
+
+          }
+
+    }

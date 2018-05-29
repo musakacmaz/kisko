@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-navbar color="navcolor">
+    <ion-title>Bilgilerinizi Düzenleyin</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="update()"> Kaydet</button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-list *ngIf="doctorinfo" no-lines>
+
+    <form [formGroup]="form" (ngSubmit)="update()">
+
+        <ion-item>
+            <ion-label color="primary" stacked> Unvan </ion-label>
+            <ion-input type="text" clearInput="true" formControlName="unvan" [class.invalid]="(!form.controls.unvan.valid && submitAttempt)"></ion-input>
+          </ion-item>
+
+      <ion-item>
+        <ion-label color="primary" stacked> Mezun Olduğu Okul </ion-label>
+        <ion-input type="text" clearInput="true" formControlName="mezuniyetkurumu" [class.invalid]="(!form.controls.mezuniyetkurumu.valid && submitAttempt)"></ion-input>
+      </ion-item>
+
+
+      <ion-item>
+        <ion-label color="primary" stacked> Mezuniyet Tarihi </ion-label>
+        <ion-datetime [(ngModel)]="doctorinfo[0].mezuniyettarihi" displayFormat="DD/MM/YYYY" pickerFormat="D MMMM YYYY" cancelText="Vazgeç"
+          doneText="Tamam" formControlName="mezuniyettarihi" [class.invalid]="(!form.controls.mezuniyettarihi.valid && submitAttempt)"></ion-datetime>
+      </ion-item>
+
+
+      <ion-item>
+        <ion-label color="primary" stacked>Uzmanlık Aldığı Kurum</ion-label>
+        <ion-input type="text" clearInput="true" formControlName="uzmanlikkurumu" [class.invalid]="(!form.controls.uzmanlikkurumu.valid && submitAttempt)"></ion-input>
+      </ion-item>
+
+
+      <ion-item>
+        <ion-label color="primary" stacked> Uzmanlık Tarihi </ion-label>
+        <ion-datetime [(ngModel)]="doctorinfo[0].uzmanliktarihi" displayFormat="DD/MM/YYYY" pickerFormat="D MMMM YYYY" cancelText="Vazgeç"
+          doneText="Tamam" formControlName="uzmanliktarihi" [class.invalid]="(!form.controls.uzmanliktarihi.valid && submitAttempt)"></ion-datetime>
+      </ion-item>
+
+    </form>
+
+  </ion-list>
+</ion-content>

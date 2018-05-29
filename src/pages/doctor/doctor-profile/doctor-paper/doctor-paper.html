@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-navbar color="navcolor">
+    <ion-title>Makaleler</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="addPaper()" text-capitalize>
+        Ekle
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <h2 align="middle" *ngIf="isEmpty">Makale Yok</h2>
+
+  <ion-list *ngIf="!isEmpty">
+
+    <ion-item *ngFor="let paper of papers">
+      <h2>{{paper.baslik}}</h2>
+      <p class="date2" text-right>{{paper.gondermetarihi}}</p>
+      <br>
+      <h3>{{paper.aciklama}}</h3>
+
+      <ion-row>
+        <ion-col col-4>
+          <button ion-button icon-left clear small>
+            <ion-icon name="thumbs-up"></ion-icon>
+            <div text-capitalize>{{paper.begenme}}</div>
+          </button>
+        </ion-col>
+        <ion-col col-4>
+          <button ion-button icon-left clear small>
+            <ion-icon name="eye"></ion-icon>
+            <div text-capitalize>{{paper.goruntuleme}}</div>
+          </button>
+        </ion-col>
+        <ion-col col-4>
+          <button ion-button icon-left clear small (click)="openPaper(paper.url)">
+            <ion-icon name="book"></ion-icon>
+            <div text-capitalize>Oku</div>
+          </button>
+        </ion-col>
+      </ion-row>
+
+    </ion-item>
+
+  </ion-list>
+</ion-content>

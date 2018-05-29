@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-navbar color="navcolor">
+    <ion-title>Eğitim Bilgileri</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="update()">
+        Düzenle
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list *ngIf="doctorinfo" no-lines>
+
+    <ion-item>
+      <ion-label stacked color="primary">Unvan</ion-label>
+      <ion-input class="editable" readonly="true" [(ngModel)]=doctorinfo[0].unvan></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked color="primary">Mezun Olduğu Okul</ion-label>
+      <ion-input class="editable" readonly="true" [(ngModel)]=doctorinfo[0].mezuniyetkurumu></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked color="primary">Mezuniyet Tarihi </ion-label>
+      <ion-input class="editable" readonly="true" [(ngModel)]=doctorinfo[0].mezuniyettarihi></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked color="primary">Uzmanlık Aldığı Kurum</ion-label>
+      <ion-input class="editable" readonly="true" [(ngModel)]=doctorinfo[0].uzmanlikkurumu></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked color="primary">Uzmanlık Tarihi</ion-label>
+      <ion-input class="editable" readonly="true" [(ngModel)]=doctorinfo[0].uzmanliktarihi></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked color="primary">Branş</ion-label>
+      <ion-input class="editable" readonly="true" [(ngModel)]=doctorinfo[0].bransadi></ion-input>
+    </ion-item>
+
+  </ion-list>
+</ion-content>

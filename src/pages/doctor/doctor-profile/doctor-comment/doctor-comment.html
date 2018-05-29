@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-navbar color="navcolor">
+    <ion-title>Yorumlar</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <h2 align="middle" *ngIf="isEmpty">Hakkınızda Yorum Yok</h2>
+
+  <ion-list *ngIf="!isEmpty">
+
+    <ion-item *ngFor="let comment of comments">
+      <ion-row>
+
+        <ion-col col-8>
+
+          <h2> {{ comment.hastaadi }} {{ comment.hastasoyadi }} </h2>
+          <p> {{ comment.meslek }} • {{ comment.hastayas }} • {{ comment.gender }} </p>
+          <i> {{ comment.yorumtext }} </i>
+          <rating align="left" [(ngModel)]="comment.puan" readOnly="true" max="5" emptyStarIconName="star-outline" halfStarIconName="star-half"
+            starIconName="star" nullable="false"></rating>
+
+        </ion-col>
+
+        <ion-col col-4>
+
+          <p class="date2" text-right>{{comment.tarih}}</p>
+          <ion-item no-lines *ngIf="!isSecretary">
+            <ion-toggle item-right [(ngModel)]="comment.isShow" (ionChange)="changeApply(comment.hastatc, comment.vizityorumid, comment.vizitid, comment.puan, comment.yorumtext, comment.isShow)"></ion-toggle>
+          </ion-item>
+          <p text-right class="bool" *ngIf="comment.isShow && !isSecretary" >Göster</p>
+          <p text-right class="bool" *ngIf="!comment.isShow && !isSecretary">Gizle</p>
+
+        </ion-col>
+
+      </ion-row>
+
+    </ion-item>
+
+  </ion-list>
+</ion-content>

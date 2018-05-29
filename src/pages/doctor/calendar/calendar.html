@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-navbar color="navcolor">
+    <ion-title> {{viewTitle}} </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="presentActionSheet()">
+        <ion-icon name="options"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+
+  <calendar *ngIf="isLoaded"
+  [eventSource]="eventSource"
+  [calendarMode]="calendar.mode"
+  [currentDate]="calendar.currentDate"
+  [locale]="calendar.locale"
+  (onEventSelected)="onEventSelected($event)"
+  (onTitleChanged)="onViewTitleChanged($event)"
+  (onTimeSelected)="onTimeSelected($event)"
+  step="30"
+  class="calendar">
+  </calendar>
+
+  <ion-fab right bottom>
+    <button ion-fab (click)="addEvent()">
+      <ion-icon name="add"></ion-icon>
+    </button>
+  </ion-fab>
+
+</ion-content>

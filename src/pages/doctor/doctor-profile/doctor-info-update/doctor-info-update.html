@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-navbar color="navcolor">
+    <ion-title>İletişim Bilgisi</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="update()"> Kaydet</button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-list *ngIf="doctorinfo" no-lines>
+
+    <form [formGroup]="form" (ngSubmit)="update()">
+
+      <ion-item>
+        <ion-label color="primary" stacked> Web Tanıtım Rumuzu </ion-label>
+        <ion-input type="tel" clearInput="true" formControlName="tag" [class.invalid]="(!form.controls.tag.valid && submitAttempt)"></ion-input>
+      </ion-item>
+
+      <ion-item>
+          <ion-label color="primary" stacked> Muayenehane Adresi </ion-label>
+          <ion-textarea type="tel" clearInput="true" rows="3" formControlName="adres" [class.invalid]="(!form.controls.adres.valid && submitAttempt)"></ion-textarea>
+        </ion-item>
+
+      <ion-item>
+        <ion-label color="primary" stacked> Telefon 1 </ion-label>
+        <ion-input type="tel" clearInput="true" formControlName="tel1" [class.invalid]="(!form.controls.tel1.valid && submitAttempt)"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="primary" stacked> Telefon 2 </ion-label>
+        <ion-input type="tel" clearInput="true" formControlName="tel2" [class.invalid]="(!form.controls.tel2.valid && submitAttempt)"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="primary" stacked> Telefon 3 </ion-label>
+        <ion-input type="tel" clearInput="true" formControlName="tel3" [class.invalid]="(!form.controls.tel3.valid && submitAttempt)"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="primary" stacked> E-Posta </ion-label>
+        <ion-input type="email" clearInput="true" formControlName="eposta" [class.invalid]="(!form.controls.eposta.valid && submitAttempt)"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="primary" stacked> Web Sitesi </ion-label>
+        <ion-input type="text" clearInput="true" formControlName="website" [class.invalid]="(!form.controls.website.valid && submitAttempt)"></ion-input>
+      </ion-item>
+
+
+
+    </form>
+
+  </ion-list>
+</ion-content>

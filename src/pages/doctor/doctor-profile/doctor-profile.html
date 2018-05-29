@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-navbar color="navcolor">
+    <ion-title> Tanıtım </ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-list>
+    <button ion-item (click)="openPage(1)">
+      <ion-icon name="person" item-start color="primary"></ion-icon>
+      Kimlik Bilgileri
+    </button>
+
+    <button ion-item (click)="openPage(2)">
+      <ion-icon name="school" item-start color="primary"></ion-icon>
+      Eğitim Bilgileri
+    </button>
+
+    <button ion-item (click)="openPage(3)">
+      <ion-icon name="information-circle" item-start color="primary"></ion-icon>
+      Özgeçmiş
+    </button>
+
+    <button ion-item (click)="openPage(4)">
+      <ion-icon name="mail" item-start color="primary"></ion-icon>
+      İletişim Bilgileri
+    </button>
+
+    <button ion-item (click)="openPage(5)">
+      <ion-icon name="book" item-start color="primary"></ion-icon>
+      Makaleler
+    </button>
+
+    <button ion-item (click)="openPage(6)">
+      <ion-icon name="videocam" item-start color="primary"></ion-icon>
+      Videolar
+    </button>
+
+    <button ion-item (click)="openPage(7)">
+      <ion-icon name="chatboxes" item-start color="primary"></ion-icon>
+      Yorumlar
+    </button>
+
+  </ion-list>
+
+</ion-content>

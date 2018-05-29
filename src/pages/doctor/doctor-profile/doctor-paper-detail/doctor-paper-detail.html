@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-navbar color="navcolor">
+    <ion-title>Makale Ekle</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="save()" text-capitalize>
+        Kaydet
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-list>
+
+    <ion-item>
+      <ion-label color="primary" stacked> Başlık </ion-label>
+      <ion-input type="text" [(ngModel)]="paper.title"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label color="primary" stacked> Açıklama </ion-label>
+      <ion-textarea rows="3" type="text" [(ngModel)]="paper.description"></ion-textarea>
+    </ion-item>
+
+    <br>
+
+    <input type="file" id="fileUpload" class="ios-file-input" (change)="onFileFromStorageChosen($event)" />
+    <ion-buttons text-center>
+      <button ion-button icon-left align="center" text-capitalize>
+        <ion-icon name="folder"></ion-icon>
+        Dosya Seç
+      </button>
+    </ion-buttons>
+    <ion-label align="middle">{{fileName}}</ion-label>
+
+  </ion-list>
+</ion-content>

@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-navbar color="navcolor">
+    <ion-title>İletişim Bilgileri</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="update()">
+        Düzenle
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+
+  <ion-list *ngIf="doctorinfo" no-lines>
+
+    <ion-item>
+      <ion-label stacked color="primary">Web Tanıtım Rumuzu (www.kisko.net/)</ion-label>
+      <ion-input class="editable" readonly="true" [(ngModel)]="doctorinfo[0].tag"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label stacked color="primary">Muayenehane Adresi</ion-label>
+        <ion-textarea class="editable" rows="3" readonly="true" [(ngModel)]="doctorinfo[0].adres"></ion-textarea>
+      </ion-item>
+
+    <ion-item>
+      <ion-label stacked color="primary">Telefon 1</ion-label>
+      <ion-input class="editable" readonly="true" [(ngModel)]="doctorinfo[0].tel1"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked color="primary">Telefon 2</ion-label>
+      <ion-input class="editable" readonly="true" [(ngModel)]="doctorinfo[0].tel2"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked color="primary">Telefon 3</ion-label>
+      <ion-input class="editable" readonly="true" [(ngModel)]="doctorinfo[0].tel3"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked color="primary">E-Posta </ion-label>
+      <ion-input class="editable" readonly="true" [(ngModel)]="doctorinfo[0].eposta"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked color="primary">Web Sitesi </ion-label>
+      <ion-input class="editable" readonly="true" [(ngModel)]="doctorinfo[0].website"></ion-input>
+    </ion-item>
+
+  </ion-list>
+
+</ion-content>

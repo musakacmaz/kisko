@@ -1,0 +1,34 @@
+<ion-header>
+
+  <ion-navbar color="navcolor">
+    <ion-title>Video Ekle</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="save()" text-capitalize>
+        Kaydet
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-list>
+
+    <ion-item>
+      <ion-label color="primary" stacked> Video Linki </ion-label>
+      <ion-input type="text" clearInput="true" [(ngModel)]="video.url"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label color="primary" stacked> Başlık </ion-label>
+      <ion-input type="text" clearInput="true" [(ngModel)]="video.title"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label color="primary" stacked> Açıklama </ion-label>
+      <ion-textarea rows="3" type="text" clearInput="true" [(ngModel)]="video.description"></ion-textarea>
+    </ion-item>
+
+  </ion-list>
+</ion-content>

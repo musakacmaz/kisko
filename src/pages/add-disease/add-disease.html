@@ -1,0 +1,41 @@
+<ion-header>
+
+  <ion-navbar color="navcolor">
+    <ion-buttons left>
+      <button ion-button (click)="cancel()">
+        Vazgeç
+      </button>
+    </ion-buttons>
+    <ion-title>Hastalık Ekle</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="addDisease()">
+        Kaydet
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+  <h1>{{disease_name}}</h1>
+
+  <ion-item>
+    <ion-label>Aktif</ion-label>
+    <ion-checkbox item-end [(ngModel)]="durum"></ion-checkbox>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Geçmişte</ion-label>
+    <ion-checkbox item-end [(ngModel)]="gecmiste"></ion-checkbox>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Ailede</ion-label>
+    <ion-select [(ngModel)]="selected" placeholder="Seçiniz" multiple="true" okText="Tamam" cancelText="Vazgeç">
+      <ion-option *ngFor="let relation of relationtypes let i=index" value="{{relation.relationtypeid}}"> {{relation.description}} </ion-option>
+    </ion-select>
+  </ion-item>
+
+</ion-content>

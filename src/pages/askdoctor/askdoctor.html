@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-navbar color="navcolor">
+
+    <ion-buttons left>
+      <button ion-button (click)="cancel()">
+        Vazgeç
+      </button>
+    </ion-buttons>
+
+    <ion-title>Uzmana Sor</ion-title>
+
+    <ion-buttons end>
+      <button ion-button (click)="save()">
+        Gönder
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+
+  <ion-list no-lines>
+
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="{{doctorinfo[0].fotourl}}" />
+      </ion-avatar>
+      {{ doctorinfo[0].name }} {{ doctorinfo[0].surname }}
+      <p>{{ doctorinfo[0].bransadi }}</p>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked color="primary">Sorunuz </ion-label>
+      <ion-textarea rows="10" class="editable" [(ngModel)]=soru></ion-textarea>
+    </ion-item>
+
+  </ion-list>
+
+</ion-content>

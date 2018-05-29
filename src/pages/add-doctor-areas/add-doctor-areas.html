@@ -1,0 +1,59 @@
+<ion-header>
+
+  <ion-navbar color="navcolor">
+    <ion-buttons left>
+      <button ion-button (click)="cancel()">
+        Vazgeç
+      </button>
+    </ion-buttons>
+    <ion-title>Saha Ekle</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="save()">
+        Kaydet
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+  <ion-list no-lines>
+
+    <ion-item>
+      <ion-label stacked color="primary"> Saha Adı </ion-label>
+      <ion-input [(ngModel)]="areainfo.sahaadi" clearInput="true"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked color="primary">Saha Tipi</ion-label>
+      <ion-select [(ngModel)]="areainfo.sahatipi" interface="popover">
+        <ion-option value="1">Metin</ion-option>
+        <ion-option value="2">Sayı</ion-option>
+        <ion-option value="3">Tarih</ion-option>
+        <ion-option value="4">Aralık</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked color="primary">Sıra No</ion-label>
+      <ion-select [(ngModel)]="areainfo.sirano" interface="popover">
+        <ion-option value="1">1</ion-option>
+        <ion-option value="2">2</ion-option>
+        <ion-option value="3">3</ion-option>
+        <ion-option value="4">4</ion-option>
+        <ion-option value="5">5</ion-option>
+        <ion-option value="6">6</ion-option>
+        <ion-option value="7">7</ion-option>
+        <ion-option value="8">8</ion-option>
+        <ion-option value="9">9</ion-option>
+        <ion-option value="10">10</ion-option>
+        <ion-option value="11">11</ion-option>
+        <ion-option value="12">12</ion-option>
+      </ion-select>
+    </ion-item>
+
+  </ion-list>
+
+</ion-content>

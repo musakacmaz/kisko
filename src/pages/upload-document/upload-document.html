@@ -1,0 +1,43 @@
+<ion-header>
+
+  <ion-navbar color="navcolor">
+    <ion-buttons left>
+      <button ion-button (click)="dismiss()" text-capitalize>
+        Vazgeç
+      </button>
+    </ion-buttons>
+    <ion-title>
+      Belge Ekle
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="saveDocument()" text-capitalize>
+        Kaydet
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+  <ion-list no-lines>
+
+    <ion-item>
+      <ion-label stacked color="primary"> Başlık </ion-label>
+      <ion-input [(ngModel)]="documentinfo.baslik" clearInput="true"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked color="primary"> Açıklama </ion-label>
+      <ion-input [(ngModel)]="documentinfo.aciklama" clearInput="true"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked color="primary"> Belge </ion-label>
+      <img [src]="imageData" style="width: 100%" *ngIf="imageData" />
+    </ion-item>
+
+  </ion-list>
+
+</ion-content>

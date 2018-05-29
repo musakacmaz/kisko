@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-navbar color="navcolor">
+    <ion-buttons left>
+      <button ion-button (click)="close()">
+        Vazgeç
+      </button>
+    </ion-buttons>
+    <ion-title>{{data_name}} Takip</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="save()">
+        Kaydet
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-list>
+
+    <p align="middle"> Hastanın takip etmek istediğiniz ölçümlerinden hangi sıklıkta haberdar olmak istediğinizi seçiniz. </p>
+
+    <ion-item>
+      <ion-label>Bildirim Sıklığı</ion-label>
+      <ion-select [(ngModel)]="interaction" interface="popover">
+        <ion-option value="1">Anlık</ion-option>
+        <ion-option value="2">Periyodik</ion-option>
+        <ion-option value="3">Filtre</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item *ngIf="interaction === '2'">
+      <ion-label>Periyot Tipi</ion-label>
+      <ion-select [(ngModel)]="periodtype" interface="popover">
+        <ion-option value="3">Dakika</ion-option>
+        <ion-option value="2">Saat</ion-option>
+        <ion-option value="1">Gün</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item *ngIf="interaction === '2'">
+      <ion-label stacked color="primary">Değer</ion-label>
+      <ion-input [(ngModel)]="periodvalue" type="number" clearInput="true"></ion-input>
+    </ion-item>
+
+    <ion-item *ngIf="interaction === '3'">
+      <ion-label stacked color="primary">Şundan Küçükse</ion-label>
+      <ion-input [(ngModel)]="smaller" type="number" clearInput="true"></ion-input>
+    </ion-item>
+
+    <ion-item *ngIf="interaction === '3'">
+      <ion-label stacked color="primary">Şundan Büyükse</ion-label>
+      <ion-input [(ngModel)]="bigger" type="number" clearInput="true"></ion-input>
+    </ion-item>
+
+  </ion-list>
+</ion-content>

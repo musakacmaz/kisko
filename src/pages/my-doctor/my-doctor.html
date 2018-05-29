@@ -1,0 +1,19 @@
+<ion-header>
+
+  <ion-navbar color="navcolor">
+    <ion-title>Doktorum</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+    <ion-item>
+        <ion-label color="primary" stacked>Aktif Doktor</ion-label>
+        <ion-select [(ngModel)]="activedoctortc" okText="Tamam" cancelText="Vazgeç">
+          <ion-option *ngFor="let doctor of doctors" [value]="doctor.doktortc" (ionSelect)="changeLastDoctor(doctor.doktortc)">{{doctor.doktor}}</ion-option>
+        </ion-select>
+      </ion-item>
+
+</ion-content>

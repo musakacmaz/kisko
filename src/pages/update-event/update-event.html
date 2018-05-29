@@ -1,0 +1,62 @@
+<ion-header>
+
+  <ion-navbar color="navcolor">
+    <ion-buttons left>
+      <button ion-button (click)="cancel()" text-capitalize>
+        Vazgeç
+      </button>
+    </ion-buttons>
+    <ion-title>Etkinlik Güncelle</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="save()" text-capitalize>
+        Kaydet
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+  <ion-list>
+
+    <ion-item *ngIf="!isEmptyType">
+      <ion-label stacked color="primary">Randevu Tipi</ion-label>
+      <ion-select [(ngModel)]="event.type" interface="popover">
+        <ion-option *ngFor="let type of types" value="{{type.randevutipiid}}" (ionSelect)="adjustTime(type.sure)">{{type.isim}}</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked color="primary">Başlangıç</ion-label>
+      <ion-datetime [(ngModel)]="event.startTime" displayFormat="DD/MM/YYYY HH:mm" pickerFormat="DD/MM/YYYY HH:mm" cancelText="Vazgeç"
+        doneText="Tamam"></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked color="primary">Bitiş</ion-label>
+      <ion-datetime [(ngModel)]="event.endTime" displayFormat="DD/MM/YYYY HH:mm" pickerFormat="DD/MM/YYYY HH:mm" cancelText="Vazgeç"
+        doneText="Tamam"></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked color="primary">Açıklama</ion-label>
+      <ion-textarea rows="4" type="text" [(ngModel)]="event.description" clearInput="true"></ion-textarea>
+    </ion-item>
+    <br><br>
+    <ion-buttons text-center>
+      <button ion-button icon-left align="center" color="danger" (click)="showConfirm()" text-capitalize>
+        <ion-icon name="trash"></ion-icon>
+        Etkinliği Sil
+      </button>
+    </ion-buttons>
+    <!-->
+    <ion-item>
+      <ion-label>Bütün Gün?</ion-label>
+      <ion-checkbox [(ngModel)]="event.allDay"></ion-checkbox>
+    </ion-item>
+    <!-->
+  </ion-list>
+
+</ion-content>

@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-navbar class = "navbar" hideBackButton = "true">
+    <ion-title> Kisko</ion-title>
+
+    <ion-buttons end>
+
+      <button no-lines class= "avatar" ion-item detail-none (click) ="itemTapped(5)">
+        <ion-avatar>
+          <img src = "assets/image/{{islogin.avatar}}"/>
+        </ion-avatar>
+      </button>
+
+    </ion-buttons>
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+    <ion-grid>
+
+            <ion-row>
+              <ion-col>
+                <button class="up-left-icon" ion button clear (click) ="itemTapped($event, 1)"><img src="assets/icon/takip.png"/></button>
+                <button class="up-right-icon" ion button clear (click) ="itemTapped($event, 2)"><img src="assets/icon/e-muayene.png"/></button>
+              </ion-col>
+            </ion-row>
+
+            <ion-row>
+              <ion-col>
+                <button class="mid-left-icon" ion button clear (click) ="itemTapped($event, 3)"><img src="assets/icon/cv.png"/></button>
+                <button class="mid-right-icon" ion button clear (click) ="itemTapped($event, 4)"><img src="assets/icon/randevu.png"/></button>
+              </ion-col>
+            </ion-row>
+
+             <ion-row>
+              <ion-col>
+                <button class="down-left-icon" ion button clear (click) ="itemTapped($event, 3)"><img src="assets/icon/destek.png"/></button>
+              </ion-col>
+            </ion-row>
+
+            <ion-row>
+                <ion-col>
+
+                </ion-col>
+            </ion-row>
+
+    </ion-grid>
+
+            <ion-list>
+
+                <button ion-item (click) = "showConfirm()">
+                  <ion-icon name="log-out" item-start></ion-icon>
+                  Çıkış Yap
+                </button>
+
+            </ion-list>
+
+</ion-content>

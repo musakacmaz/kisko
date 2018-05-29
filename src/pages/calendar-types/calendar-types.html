@@ -1,0 +1,47 @@
+<ion-header>
+
+  <ion-navbar color="navcolor">
+    <ion-title> Randevu Türlerim</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="addType()">
+        Ekle
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+  <h2 align="middle" *ngIf="isEmpty">Randevu Türü Yok</h2>
+
+  <ion-list *ngIf="!isEmpty">
+
+    <ion-item-sliding *ngFor="let type of types" no-details text-wrap>
+
+      <ion-item>
+
+        <h2>{{type.isim}}</h2>
+        <p>{{type.sure}} dakika</p>
+      </ion-item>
+
+      <ion-item-options side="right">
+
+        <button ion-button color="secondary" (click)="updateType(type)">
+          <ion-icon name="create"></ion-icon>
+          &nbsp; Düzenle &nbsp;
+        </button>
+
+        <button ion-button color="danger" (click)="showConfirm(type.randevutipiid)">
+          <ion-icon name="trash"></ion-icon>
+          &nbsp;&nbsp; Sil &nbsp;&nbsp;
+        </button>
+
+      </ion-item-options>
+
+    </ion-item-sliding>
+
+  </ion-list>
+
+</ion-content>

@@ -1,0 +1,49 @@
+<ion-header>
+
+  <ion-navbar color="navcolor">
+    <ion-title>Sahalarım</ion-title>
+    <ion-buttons end>
+        <button ion-button (click)="addArea()">
+          Ekle
+        </button>
+      </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+  <h2 align="middle" *ngIf="isEmpty">Saha Yok</h2>
+
+  <ion-list *ngIf="!isEmpty">
+
+    <ion-item-sliding *ngFor="let area of areas" no-details text-wrap>
+
+      <ion-item>
+
+        {{area.sahaadi}}
+
+      </ion-item>
+
+      <ion-item-options side="right" *ngIf="!isDoctor">
+
+        <button ion-button color="secondary" (click)="showPrompt(area.doktorsahaid, area.sahaadi, area.sirano)">
+          <ion-icon name="create"></ion-icon>
+          &nbsp; Düzenle &nbsp;
+        </button>
+
+        <button ion-button color="danger" (click)="showConfirm(area.doktorsahaid)">
+          <ion-icon name="trash"></ion-icon>
+          &nbsp;&nbsp; Sil &nbsp;&nbsp;
+        </button>
+
+      </ion-item-options>
+
+    </ion-item-sliding>
+
+  </ion-list>
+
+
+
+</ion-content>

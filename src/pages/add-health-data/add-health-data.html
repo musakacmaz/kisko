@@ -1,0 +1,52 @@
+<ion-header>
+
+  <ion-navbar color="navcolor">
+    <ion-buttons left>
+      <button ion-button (click)="close()">
+        Vazgeç
+      </button>
+    </ion-buttons>
+    <ion-title> {{data_name}}</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="save()">
+        Kaydet
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+  <ion-list no-lines>
+
+    <ion-item>
+      <ion-label color="primary" stacked> Tarih </ion-label>
+      <ion-datetime [(ngModel)]="measurement.olcumzamani" displayFormat="DD/MM/YYYY HH:mm" pickerFormat="DD/MM/YYYY HH:mm" cancelText="Vazgeç"
+        doneText="Tamam"></ion-datetime>
+    </ion-item>
+
+    <ion-item *ngIf="size === '1' || size === '2' || size === '3' || size === '4'">
+      <ion-label stacked color="primary">{{data_name}} Değer 1</ion-label>
+      <ion-input [(ngModel)]="measurement.deger1" clearInput="true"></ion-input>
+      </ion-item>
+
+      <ion-item *ngIf="size === '2' || size === '3' || size === '4'">
+        <ion-label stacked color="primary">{{data_name}} Değer 2 </ion-label>
+        <ion-input [(ngModel)]="measurement.deger2" clearInput="true"></ion-input>
+      </ion-item>
+
+      <ion-item *ngIf="size === '3' || size === '4'">
+        <ion-label stacked color="primary">{{data_name}} Değer 3 </ion-label>
+        <ion-input [(ngModel)]="measurement.deger3" clearInput="true"></ion-input>
+      </ion-item>
+
+      <ion-item *ngIf="size === '4'">
+        <ion-label stacked color="primary">{{data_name}} Değer 4 </ion-label>
+        <ion-input [(ngModel)]="measurement.deger4" clearInput="true"></ion-input>
+      </ion-item>
+
+  </ion-list>
+
+</ion-content>

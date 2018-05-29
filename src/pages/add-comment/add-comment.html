@@ -1,0 +1,41 @@
+<ion-header>
+
+  <ion-navbar color="navcolor">
+    <ion-buttons left>
+      <button ion-button (click)="close()">
+        Vazgeç
+      </button>
+    </ion-buttons>
+    <ion-title>Yorum Yap</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="saveComment()">
+        Kaydet
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+
+  <ion-list>
+
+    <ion-item>
+      <ion-label color="primary" stacked>Yorum</ion-label>
+      <ion-textarea rows="4" clearInput="true" [(ngModel)]="commentinfo.yorumtext"></ion-textarea>
+    </ion-item>
+
+    <ion-item>
+      <ion-label color="primary" stacked>Puan</ion-label>
+    </ion-item>
+
+    <ion-item>
+      <rating [(ngModel)]="commentinfo.puan" readOnly="false" max="5" emptyStarIconName="star-outline" halfStarIconName="star-half"
+        starIconName="star" nullable="false">
+      </rating>
+
+    </ion-item>
+  </ion-list>
+</ion-content>

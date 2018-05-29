@@ -1,0 +1,28 @@
+<ion-header>
+
+  <ion-navbar color="navcolor">
+    <ion-title>Özgeçmiş Güncelle</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="update()"> Kaydet</button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+  <ion-list *ngIf="doctorinfo" no-lines>
+
+    <form [formGroup]="form" (ngSubmit)="update()">
+
+      <ion-item>
+        <ion-label color="primary" stacked> Özgeçmiş </ion-label>
+        <ion-textarea type="text" rows="10" clearInput="true" formControlName="aciklama" [class.invalid]="(!form.controls.aciklama.valid && submitAttempt)"></ion-textarea>
+      </ion-item>
+
+
+    </form>
+  </ion-list>
+
+</ion-content>

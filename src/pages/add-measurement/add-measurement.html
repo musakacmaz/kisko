@@ -1,0 +1,57 @@
+<ion-header>
+
+  <ion-navbar color="navcolor">
+    <ion-buttons left>
+      <button ion-button (click)="cancel()">
+        Vazgeç
+      </button>
+    </ion-buttons>
+    <ion-title>
+      Yeni Ölçüm
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="addArea()">
+        Kaydet
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+  <ion-list no-lines>
+
+    <ion-item>
+      <ion-label stacked color="primary"> Ölçüm Adı </ion-label>
+      <ion-input [(ngModel)]="areainfo.sahaadi" clearInput="true"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked color="primary">Ölçüm Tipi</ion-label>
+      <ion-select [(ngModel)]="areainfo.sahatipi" interface="popover">
+        <ion-option value="1">Metin</ion-option>
+        <ion-option value="2">Sayı</ion-option>
+        <ion-option value="3">Tarih</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked color="primary"> Birimi </ion-label>
+      <ion-input [(ngModel)]="areainfo.birimi" clearInput="true"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label stacked color="primary">Boyut</ion-label>
+        <ion-select [(ngModel)]="areainfo.boyut" interface="popover">
+          <ion-option value="1">1</ion-option>
+          <ion-option value="2">2</ion-option>
+          <ion-option value="3">3</ion-option>
+          <ion-option value="4">4</ion-option>
+        </ion-select>
+      </ion-item>
+
+  </ion-list>
+
+</ion-content>

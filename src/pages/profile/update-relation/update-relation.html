@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-navbar color="navcolor">
+    <ion-title>
+      Aile Bağını Düzenle
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="UpdateRelation()"> Kaydet
+        </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content inset>
+
+  <ion-list>
+
+    <ion-item>
+      <ion-label color="primary" stacked>Aile Bağı </ion-label>
+      <ion-select placeholder="{{relationInfo.relationtype}}" [(ngModel)]="relationInfo.relationtype" multiple="false" cancelText="Vazgeç"
+        okText="Tamam">
+        <ion-option *ngFor="let relation of relations let i=index" value="{{relation.relationtypeid}}"> {{relation.description}} </ion-option>
+      </ion-select>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-label color="primary" stacked>TC Kimlik No</ion-label>
+      <ion-input type="number" clearInput="true" [(ngModel)]="relationInfo.tckimlik"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label color="primary" stacked> Hesaba Erişim İsteği </ion-label>
+      <ion-toggle [(ngModel)]="relationInfo.readpermission" (ionChange)="relationInfo" checked="relationInfo.readpermission"></ion-toggle>
+    </ion-item>
+
+    <div text-center><button ion-button color="danger" (click)="deleteRelation()">Sil</button></div>
+
+  </ion-list>
+
+</ion-content>

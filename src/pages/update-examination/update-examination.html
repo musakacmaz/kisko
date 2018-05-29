@@ -1,0 +1,81 @@
+<ion-header>
+
+  <ion-navbar color="navcolor">
+    <ion-title>Muayeneyi Düzenle</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="updateExamination()" text-capitalize>
+        Bitti
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+
+  <ion-list no-lines>
+
+    <form [formGroup]="form" (ngSubmit)="updateExamination()">
+
+      <ion-item>
+        <ion-label color="primary" stacked> Tarih </ion-label>
+        <ion-datetime [(ngModel)]="examination[0].tarih" displayFormat="DD/MM/YYYY" pickerFormat="D MMMM YYYY" cancelText="Vazgeç"
+          doneText="Tamam" formControlName="tarih" [class.invalid]="(!form.controls.tarih.valid && submitAttempt)"></ion-datetime>
+      </ion-item>
+
+
+      <ion-item>
+        <ion-label color="primary" stacked>Öyküsü</ion-label>
+        <ion-textarea rows="4" formControlName="oyku" [class.invalid]="(!form.controls.oyku.valid && submitAttempt)"></ion-textarea>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="primary" stacked>Yakınma</ion-label>
+        <ion-textarea rows="4" formControlName="yakinma" [class.invalid]="(!form.controls.yakinma.valid && submitAttempt)"></ion-textarea>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="primary" stacked>Bulgular</ion-label>
+        <ion-textarea rows="4" clearInput formControlName="bulgular" [class.invalid]="(!form.controls.bulgular.valid && submitAttempt)"></ion-textarea>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="primary" stacked>Sonuç</ion-label>
+        <ion-textarea rows="4" clearInput="true" formControlName="sonuc" [class.invalid]="(!form.controls.sonuc.valid && submitAttempt)"></ion-textarea>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="primary" stacked>Tanı</ion-label>
+        <ion-input clearInput="true" formControlName="tani" [class.invalid]="(!form.controls.tani.valid && submitAttempt)"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="primary" stacked>Size Özel Notlar</ion-label>
+        <ion-textarea rows="4" clearInput="true" formControlName="aciklama" [class.invalid]="(!form.controls.aciklama.valid && submitAttempt)"></ion-textarea>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="primary" stacked> Kontrol Tarihi </ion-label>
+        <ion-datetime [(ngModel)]="examination[0].kontroltarihi" displayFormat="DD/MM/YYYY" pickerFormat="D MMMM YYYY" cancelText="Vazgeç"
+          doneText="Tamam" formControlName="kontroltarihi" [class.invalid]="(!form.controls.kontroltarihi.valid && submitAttempt)"></ion-datetime>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="primary" stacked>Kontrol Notları</ion-label>
+        <ion-input clearInput="true" formControlName="kontrol" [class.invalid]="(!form.controls.kontrol.valid && submitAttempt)"></ion-input>
+      </ion-item>
+
+    </form>
+
+  </ion-list>
+
+  <ion-list *ngIf="!isEmptyArea" no-lines>
+
+    <ion-item *ngFor="let area of areas" no-details text-wrap>
+      <ion-label color="primary" stacked>{{area.sahaadi}}</ion-label>
+      <ion-textarea rows="3" [(ngModel)]="area.deger1" clearInput="true"></ion-textarea>
+    </ion-item>
+
+  </ion-list>
+
+</ion-content>

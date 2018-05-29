@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar color="navcolor">
+    <ion-title>
+      Doğrulama (2/2)
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding inset>
+
+  <p>Lütfen cep telefonunuza gönderdiğimiz 6 haneli doğrulama kodunu giriniz.</p>
+
+      <ion-list>
+
+        <form [formGroup]="form" (ngSubmit)="doSmsValidate()">
+
+        <ion-item>
+          <ion-label stacked color="primary"><ion-icon name = "mail"></ion-icon> SMS Doğrulama Kodu</ion-label>
+          <ion-input type = "number" clearInput="true" formControlName="sms" [class.invalid]="(!form.controls.sms.valid && submitAttempt)"></ion-input>
+        </ion-item>
+
+        <br>
+
+      <button ion-button  type = "submit" text-capitalize > Doğrula ve Bitir </button>
+
+      <br>
+
+      <ion-label (click)= "doResendSMS()" color="primary" text-capitalize> Tekrar Kod Gönder </ion-label>
+
+      </form>
+      </ion-list>
+
+
+
+</ion-content>

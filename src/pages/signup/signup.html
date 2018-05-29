@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Yeni Kayıt
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding inset>
+
+      <ion-list>
+
+        <form [formGroup]="form" (ngSubmit)="doSignUp()">
+
+        <ion-item>
+          <ion-label floating color="grey"><ion-icon name = "mail"></ion-icon> E-Posta </ion-label>
+          <ion-input type = "email" clearInput="true" formControlName="email" [class.invalid]="(!form.controls.email.valid && submitAttempt)"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label floating color="grey"><ion-icon name = "key"></ion-icon> Şifre </ion-label>
+          <ion-input type = "password" clearInput="true" formControlName="password" [class.invalid]="(!form.controls.password.valid &&  submitAttempt)"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label floating color="grey"><ion-icon name = "key"></ion-icon> Şifre Tekrar </ion-label>
+          <ion-input type = "password" clearInput="true" formControlName="password_again" [class.invalid]="(!form.controls.password_again.valid &&  submitAttempt)"></ion-input>
+        </ion-item>
+
+        <!-->
+        <ion-item *ngIf="(!form.validator && submitAttempt)">
+            <p>Şifre uyuşmazlığı.</p>
+        </ion-item>
+        <!-->
+
+        <ion-item>
+          <ion-label floating color="grey"><ion-icon name = "person"></ion-icon> İsim </ion-label>
+          <ion-input type = "text"  clearInput="true" formControlName="firstName" [class.invalid]="(!form.controls.firstName.valid &&  submitAttempt)"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label floating color="grey"><ion-icon name = "person"></ion-icon> Soyisim </ion-label>
+          <ion-input  type = "text" clearInput="true" formControlName="lastName" [class.invalid]="(!form.controls.lastName.valid && submitAttempt)"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label floating color="grey"><ion-icon name = "phone-portrait"></ion-icon> Cep Telefonu (+90) </ion-label>
+          <ion-input type = "tel" clearInput="true" formControlName="phone" [class.invalid]="(!form.controls.phone.valid && submitAttempt)"></ion-input>
+        </ion-item>
+        <br>
+
+      <button ion-button  type = "submit"  > Kayıt Ol </button>
+
+      </form>
+      </ion-list>
+
+
+
+</ion-content>

@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-navbar color="navcolor">
+    <ion-buttons left>
+      <button ion-button (click)="dismiss()">
+        Vazgeç
+      </button>
+    </ion-buttons>
+    <ion-title>
+      Yeni Profil Fotoğrafı
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="saveImage()">
+        Kaydet
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <img [src]="imageData" style="width: 100%" *ngIf="imageData" />
+
+</ion-content>

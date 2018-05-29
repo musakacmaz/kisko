@@ -1,0 +1,88 @@
+<ion-header>
+  <ion-navbar color="navcolor">
+    <ion-title>
+      Profili Düzenleyin
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="doUpdateUser()"> Kaydet
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list no-lines>
+
+    <form [formGroup]="form" (ngSubmit)="doUpdateUser()">
+
+      <ion-item>
+        <ion-label color="primary" stacked> İsim </ion-label>
+        <ion-input type="text" clearInput="true" formControlName="firstName" [class.invalid]="(!form.controls.firstName.valid && submitAttempt)"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="primary" stacked> Soyisim </ion-label>
+        <ion-input type="text" clearInput="true" formControlName="lastName" [class.invalid]="(!form.controls.lastName.valid && submitAttempt)"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="primary" stacked> Adres </ion-label>
+        <ion-input type="text" clearInput="true" formControlName="address" [class.invalid]="(!form.controls.address.valid && submitAttempt)"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="primary" stacked> Şehir </ion-label>
+        <ion-input type="text" clearInput="true" formControlName="city" [class.invalid]="(!form.controls.city.valid && submitAttempt)"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="primary" stacked> Ülke </ion-label>
+        <ion-input type="text" clearInput="true" formControlName="country" [class.invalid]="(!form.controls.country.valid && submitAttempt)"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="primary" stacked> Cinsiyet </ion-label>
+        <ion-select [(ngModel)]="updateInfo[0].gender" multiple="false" cancelText="Vazgeç" okText="Tamam" formControlName="gender"
+          [class.invalid]="(!form.controls.gender.valid && submitAttempt)">
+          <ion-option value="Kadın" selected="{{femaleselected}}"> Kadın </ion-option>
+          <ion-option value="Erkek" selected="{{maleselected}}"> Erkek </ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="primary" stacked> Doğum Tarihi </ion-label>
+        <ion-datetime [(ngModel)]="updateInfo[0].birthdate" displayFormat="DD/MM/YYYY" pickerFormat="D MMMM YYYY" cancelText="Vazgeç"
+          doneText="Tamam" formControlName="birthdate" [class.invalid]="(!form.controls.birthdate.valid && submitAttempt)"></ion-datetime>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="primary" stacked> Doğum Yeri </ion-label>
+        <ion-input type="text" clearInput="true" formControlName="birthplace" [class.invalid]="(!form.controls.birthplace.valid && submitAttempt)"></ion-input>
+      </ion-item>
+
+      <ion-item>
+          <ion-label color="primary" stacked> Meslek </ion-label>
+          <ion-input type="text" clearInput="true" formControlName="meslek" [class.invalid]="(!form.controls.meslek.valid && submitAttempt)"></ion-input>
+        </ion-item>
+
+      <ion-item>
+        <ion-label color="primary" stacked> E-Mail </ion-label>
+        <ion-input type="email" clearInput="true" formControlName="email" [class.invalid]="(!form.controls.email.valid && submitAttempt)"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="primary" stacked> Cep Telefonu </ion-label>
+        <ion-input type="tel" clearInput="true" formControlName="phone" [class.invalid]="(!form.controls.phone.valid && submitAttempt)"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="primary" stacked> Ev Telefonu </ion-label>
+        <ion-input type="tel" clearInput="true" formControlName="homephone" [class.invalid]="(!form.controls.homephone.valid && submitAttempt)"></ion-input>
+      </ion-item>
+
+    </form>
+
+  </ion-list>
+
+</ion-content>

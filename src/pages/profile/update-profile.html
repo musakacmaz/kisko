@@ -1,0 +1,79 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Profilinizi Düzenleyin
+    </ion-title>
+    <ion-buttons end>
+        <button ion-button (click) = "doUpdateUser()"> Kaydet
+        </button>
+      </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding inset>
+
+      <ion-list>
+
+        <form [formGroup] = "form" (ngSubmit) = "doUpdateUser()">
+
+        <ion-item >
+          <ion-label floating color="grey"><ion-icon name = "person"></ion-icon> İsim </ion-label>
+          <ion-input type = "text" placeholder = "{{updateInfo.name}}" clearInput="true" formControlName="firstName" [class.invalid]="(!form.controls.firstName.valid && submitAttempt)"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label floating color="grey"><ion-icon name = "person"></ion-icon> Soyisim </ion-label>
+          <ion-input type = "text" placeholder = "{{updateInfo.surname}}" clearInput="true" formControlName="lastName" [class.invalid]="(!form.controls.lastName.valid && submitAttempt)"></ion-input>
+        </ion-item>
+
+         <ion-item>
+          <ion-label floating color="grey"><ion-icon name = "home"></ion-icon> Adres </ion-label>
+          <ion-textarea type = "text" placeholder = "{{updateInfo.address}}" clearInput="true" formControlName="address" [class.invalid]="(!form.controls.address.valid && submitAttempt)"></ion-textarea>
+        </ion-item>
+
+        <ion-item>
+          <ion-label floating color="grey"><ion-icon name = "pin"></ion-icon> Şehir </ion-label>
+          <ion-input type = "text" placeholder = "{{updateInfo.city}}" clearInput="true" formControlName="city" [class.invalid]="(!form.controls.city.valid && submitAttempt)"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label floating color="grey"><ion-icon name = "flag"></ion-icon> Ülke </ion-label>
+          <ion-input type = "text" placeholder = "{{updateInfo.country}}" clearInput="true" formControlName="country" [class.invalid]="(!form.controls.country.valid && submitAttempt)"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label floating color="grey"><ion-icon name = "transgender"></ion-icon> Cinsiyet </ion-label>
+            <ion-select [(ngModel)]="updateInfo.gender" multiple = "false" cancelText = "Vazgeç" okText = "Tamam" formControlName = "gender" [class.invalid]="(!form.controls.gender.valid && submitAttempt)">
+              <ion-option value = "kadın" selected = "{{femaleselected}}"> Kadın </ion-option>
+              <ion-option value = "erkek" selected = "{{maleselected}}"> Erkek </ion-option>
+            </ion-select>
+        </ion-item>
+
+        <ion-item>
+          <ion-label floating color="grey"><ion-icon name = "calendar"></ion-icon> Doğum Tarihi </ion-label>
+          <ion-datetime [(ngModel)]="updateInfo.birthdate" displayFormat="DD/MM/YYYY" pickerFormat="D MMMM YYYY" cancelText = "Vazgeç" doneText = "Tamam" formControlName="birthdate" [class.invalid]="(!form.controls.birthdate.valid && submitAttempt)" ></ion-datetime>
+        </ion-item>
+
+        <ion-item>
+          <ion-label floating color="grey"><ion-icon name = "flag"></ion-icon> Doğum Yeri </ion-label>
+          <ion-input type = "text" placeholder = "{{updateInfo.birthplace}}" clearInput="true" formControlName="birthplace" [class.invalid]="(!form.controls.birthplace.valid && submitAttempt)"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label floating color="grey"><ion-icon name = "mail"></ion-icon> E-Mail </ion-label>
+          <ion-input type = "email" placeholder = "{{updateInfo.email}}" clearInput="true" formControlName="email" [class.invalid]="(!form.controls.email.valid && submitAttempt)"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label floating color="grey"><ion-icon name = "phone-portrait"></ion-icon> Cep Telefonu(+90) </ion-label>
+          <ion-input type = "tel" placeholder = "{{updateInfo.cellphone}}" clearInput="true" formControlName="phone" [class.invalid]="(!form.controls.phone.valid && submitAttempt)"></ion-input>
+        </ion-item>
+
+         </form>
+
+      </ion-list>
+
+
+
+
+</ion-content>

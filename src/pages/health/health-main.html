@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Sağlığım</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-list>
+
+    <button ion-item>
+      <ion-icon name="flask" item-start ></ion-icon>
+      Laboratuvar Sonuçlarım
+    </button>
+
+    <button ion-item>
+      <ion-icon name="analytics" item-start></ion-icon>
+      IOT Verilerim
+    </button>
+
+    <button ion-item>
+      <ion-icon name="bicycle" item-start></ion-icon>
+      Metabolik Aktivite Verilerim
+    </button>
+
+    <button ion-item>
+      <ion-icon name="list" item-start></ion-icon>
+      Bilgi Girişlerim
+    </button>
+
+    <button ion-item (click)="itemTapped(5)">
+      <ion-icon name="heart" item-start></ion-icon>
+      KSK Sağlık Kiti
+    </button>
+
+  </ion-list>
+</ion-content>

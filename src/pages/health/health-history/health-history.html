@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar color="navcolor">
+    <ion-buttons left>
+      <button ion-button (click)="cancel()">
+        Vazgeç
+      </button>
+    </ion-buttons>
+    <ion-title>
+      Hastalık Geçmişi
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="addGecmis()">
+        Kaydet
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <br>
+  <ion-item>
+    <ion-label stacked color="primary"> Özgeçmiş </ion-label>
+    <ion-textarea rows="5" [(ngModel)]="gecmisinfo.ozgecmis" clearInput="true"></ion-textarea>
+  </ion-item>
+
+  <ion-item>
+    <ion-label stacked color="primary"> Soygeçmiş </ion-label>
+    <ion-textarea rows="5" [(ngModel)]="gecmisinfo.soygecmis" clearInput="true"></ion-textarea>
+  </ion-item>
+</ion-content>

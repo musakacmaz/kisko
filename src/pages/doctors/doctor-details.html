@@ -1,0 +1,96 @@
+<ion-header>
+	<ion-navbar>
+		<ion-title>
+      Doktor Detayları
+		</ion-title>
+  </ion-navbar>
+  <ion-toolbar>
+  <ion-segment [(ngModel)]="doctor">
+      <ion-segment-button value="hakkında">
+        Hakkında
+      </ion-segment-button>
+      <ion-segment-button value="yorumlar">
+        Yorumlar
+      </ion-segment-button>
+      <ion-segment-button value="videolar">
+        Videolar
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div [ngSwitch]="doctor">
+
+    <ion-list *ngSwitchCase="'hakkında'" no-lines>
+      <div class = "bg"></div>
+      <div class = "main-cnt">
+       <img src = "assets/image/doctor.png" class = "dp" >
+       <h1 text-center > {{ doctor_name }} </h1>
+
+      <button ion-item detail-none class = "mapbutton">
+       <ion-icon name = "ios-videocam" item-start></ion-icon>
+        Uzmana sor
+       <ion-icon name = "ios-arrow-dropright" item-end></ion-icon>
+      </button>
+
+      <ion-list-header>
+        Özgeçmiş
+      </ion-list-header>
+
+      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+
+      <ion-list-header>
+        İletişim
+      </ion-list-header>
+      <ion-item>
+      <ion-icon name="ios-call" item-start></ion-icon>
+      +90 232 461 45 67
+      </ion-item>
+      <ion-item>
+      <ion-icon name="ios-at" item-start></ion-icon>
+      doktor@gmail.com
+      </ion-item>
+
+      <ion-list-header>
+        Adres
+      </ion-list-header>
+      <p>Alsancak Kültür Mah., Dr. Mustafa Enver Bey Cad No:21, 35220 Konak/İzmir</p>
+
+      <button ion-item detail-none (click)="itemTapped()" class = "mapbutton">
+      <ion-icon name="ios-map" item-start></ion-icon>
+      Haritada gör
+      <ion-icon name = "ios-arrow-dropright" item-end></ion-icon>
+      </button>
+
+    </div>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'yorumlar'">
+
+      <ion-list-header>
+        Doktorumuza yapılan yorumlar
+      </ion-list-header>
+
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'videolar'">
+
+      <ion-list-header>
+        Uzmanımızın bilgilendirme videoları
+      </ion-list-header>
+
+      <ion-item *ngFor="let video of videos">
+        <ion-title>
+          {{video.title}}
+        </ion-title>
+
+        <iframe id="player" type="text/html" width="100%" height="390" [src]="trustUrl(video.url)" frameborder="0" allowfullscreen></iframe>
+
+      </ion-item>
+
+    </ion-list>
+
+  </div>
+
+</ion-content>

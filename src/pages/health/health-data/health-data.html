@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Sağlık Verilerim
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <!-->
+  <ion-item>
+    <ion-label stacked>Boyunu gir</ion-label>
+    <ion-input type="text" [(ngModel)]="height" placeholder="Boyum(cm)"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label stacked>Boyum</ion-label>
+    <ion-input type="text" [(ngModel)]="currentHeight" readonly></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label stacked>Adımsayar (son 24 saat)</ion-label>
+    <ion-input type="text" [(ngModel)]="stepcount" readonly></ion-input>
+  </ion-item>
+
+  <button ion-button full (click)="saveHeight()">Boyumu kaydet</button>
+  <button ion-button full (click)="saveWorkout()">Aktivite kaydet</button>
+
+  <ion-list>
+    <ion-card *ngFor="let workout of workouts">
+      <ion-card-header>{{ workout.calories }}</ion-card-header>
+      <ion-card-content>
+        <p>Aktivite: {{ workout.activityType }} </p>
+        <p>Süre: {{ workout.duration / 100 }} dakika </p>
+        <p>Tarih: {{ workout.startDate | date:'short' }} </p>
+        <p>Mesafe: {{ workout.miles * 1.6 }} km </p>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+  <!-->
+
+  <ion-list>
+
+    <button ion-item *ngFor="let type of types" (click)="itemTapped(type)">
+      {{ type }}
+    </button>
+
+  </ion-list>
+</ion-content>

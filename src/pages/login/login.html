@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>KiSKO Giriş</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+      <ion-list>
+
+        <ion-item>
+          <ion-label floating color="grey"><ion-icon name = "mail"> </ion-icon> E-posta</ion-label>
+          <ion-input [(ngModel)]="loginData.email" type = "email" clearInput="true"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label floating color="grey"><ion-icon name = "key"> </ion-icon> Şifre </ion-label>
+          <ion-input [(ngModel)]="loginData.password" type = "password" clearInput="true"></ion-input>
+        </ion-item>
+
+        <br>
+
+        <button ion-button (click) = "doLogin()" text-center> Giriş Yap </button>
+
+        <button ion-button color = "light" (click) = "signupTapped()"> Yeni Kayıt </button>
+
+        <br><br>
+
+        <button ion-button color = "light"  (click) = "loginWithFb()">
+          <ion-icon name = "logo-facebook" color = "facebook"> </ion-icon> &nbsp; Facebook ile giriş yap
+          </button>
+
+        <button ion-button color = "light" (click) = "loginWithGoogle()">
+          <ion-icon name = "logo-google" color = "danger"> </ion-icon> &nbsp; Google ile giriş yap  &nbsp; &nbsp;
+        </button>
+
+        <br>
+
+        <ion-item no-lines class="forgot-label">
+          <ion-label (click) = "doforgotPrompt()" color="primary">Şifremi unuttum</ion-label>
+        </ion-item>
+
+      </ion-list>
+
+</ion-content>
+

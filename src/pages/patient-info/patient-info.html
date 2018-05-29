@@ -1,0 +1,318 @@
+<ion-header>
+
+  <ion-navbar no-border-bottom color="navcolor">
+    <ion-title>{{ patient_name }}</ion-title>
+    <ion-buttons end *ngIf="patient === 'visit' && isDoctor">
+      <button ion-button icon-only (click)="presentActionSheet()">
+        <ion-icon name="options"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons end *ngIf="patient === 'profile' && isDoctor">
+      <button ion-button icon-only (click)="goUpdateUser()" text-capitalize>
+        Düzenle
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+  <ion-toolbar no-border-top color="navcolor">
+    <ion-segment [(ngModel)]="patient" color="primary" padding>
+      <ion-segment-button value="visit" text-capitalize>
+        Ziyaretler
+      </ion-segment-button>
+      <ion-segment-button value="history" *ngIf="!isSecretary" text-capitalize>
+        Geçmiş
+      </ion-segment-button>
+      <ion-segment-button value="data" *ngIf="!isSecretary" text-capitalize>
+        Ölçümler
+      </ion-segment-button>
+      <ion-segment-button value="profile" *ngIf="isDoctor" text-capitalize>
+        Profil
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+
+</ion-header>
+
+
+<ion-content>
+
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content pullingIcon="refresh" refreshingSpinner="circles" pullMax=400></ion-refresher-content>
+  </ion-refresher>
+
+  <div [ngSwitch]="patient">
+
+    <ion-list *ngSwitchCase="'visit'">
+
+      <ion-item-sliding *ngFor="let detail of details">
+        <ion-item (click)="visitNavigation(detail.islemtipi, detail.islemid, detail.doktortc, detail.islemid)">
+
+          <img item-start height="48 px" width="48 px" *ngIf="detail.islemtipi === '1'" src="assets/icon/manuel-visit.png" />
+          <img item-start height="48 px" width="48 px" *ngIf="detail.islemtipi === '2'" src="assets/icon/muayene.png" />
+          <img item-start height="48 px" width="48 px" *ngIf="detail.islemtipi === '3'" src="assets/icon/checkup.png" />
+          <img item-start height="48 px" width="48 px" *ngIf="detail.islemtipi === '4'" src="assets/icon/lab.png" />
+
+          <h2 *ngIf="detail.islemtipi === '1' && detail.doktortc !== doktortc">{{ detail.doktor }}</h2>
+          <h2 *ngIf="detail.islemtipi === '2' && detail.doktortc !== doktortc">{{ detail.doktorunvan }} {{ detail.doktoradi }} {{ detail.doktorsoyadi }}</h2>
+          <h2 *ngIf="detail.islemtipi === '3' && detail.doktortc !== doktortc">{{ detail.checkupadi }}</h2>
+          <h2 *ngIf="detail.islemtipi === '4' && detail.doktortc !== doktortc">{{ detail.aciklama}} </h2>
+
+          <h2 *ngIf="detail.islemtipi === '1' && detail.doktortc === doktortc" style="font-weight: bold">{{ detail.doktor }}</h2>
+          <h2 *ngIf="detail.islemtipi === '2' && detail.doktortc === doktortc" style="font-weight: bold">{{ detail.doktorunvan }} {{ detail.doktoradi }} {{ detail.doktorsoyadi }}</h2>
+          <h2 *ngIf="detail.islemtipi === '3' && detail.doktortc === doktortc" style="font-weight: bold">{{ detail.checkupadi }}</h2>
+          <h2 *ngIf="detail.islemtipi === '4' && detail.doktortc === doktortc" style="font-weight: bold">{{ detail.aciklama}} </h2>
+
+          <p *ngIf="detail.islemtipi === '1'">{{ detail.tarih }} • {{ detail.kurum }}</p>
+          <p *ngIf="detail.islemtipi === '2'">{{ detail.tarih }} • {{ detail.sonuc }}</p>
+          <p *ngIf="detail.islemtipi === '3'">{{ detail.istektarihi}} • {{ detail.checkupkurumadi }}</p>
+          <p *ngIf="detail.islemtipi === '4'">{{ detail.istektarih}} • {{ detail.labkurumadi}}</p>
+
+        </ion-item>
+
+        <ion-item-options side="right">
+
+          <button ion-button color="danger" *ngIf="isDoctor && detail.doktortc === doktortc" (click)="showConfirm(detail.muayeneid, detail.doktortc, 1)">
+            <ion-icon name="trash"></ion-icon>
+            &nbsp;&nbsp; Sil &nbsp;&nbsp;
+          </button>
+
+          <button ion-button color="danger" *ngIf="isDoctor && detail.doktortc !== doktortc">
+            <ion-icon name="trash"></ion-icon>
+            &nbsp;&nbsp; Sil &nbsp;&nbsp;
+          </button>
+
+          <button ion-button color="danger" *ngIf="!isDoctor" (click)="showConfirm(detail.manuelvizitid, null, 2)">
+            <ion-icon name="trash"></ion-icon>
+            &nbsp;&nbsp; Sil &nbsp;&nbsp;
+          </button>
+
+        </ion-item-options>
+
+      </ion-item-sliding>
+    </ion-list>
+
+    <!-->***************ZİYARETLER BURADA BİTİYOR************
+    <!-->
+
+    <ion-list *ngSwitchCase="'history'">
+
+      <h2 align="middle" *ngIf="isEmptyOzgecmis">Hastalık Yok</h2>
+
+      <ion-list *ngIf="!isEmptyOzgecmis">
+
+        <ion-item-sliding *ngFor="let hastalik of hastaliklar" no-details text-wrap>
+          <ion-item>
+
+            <ion-row>
+              <ion-col>
+                <p class="date" text-right>{{hastalik.eklemetarihi}}</p>
+                <h2>{{hastalik.doktorbilgi}}</h2>
+              </ion-col>
+            </ion-row>
+
+            <ion-row>
+              <p>Özgeçmiş: {{hastalik.ozgecmis}}</p>
+            </ion-row>
+
+            <ion-row>
+              <p>Soygeçmiş: {{hastalik.soygecmis}}</p>
+            </ion-row>
+
+          </ion-item>
+
+          <ion-item-options side="right">
+
+            <button ion-button color="secondary" (click)="goViewGecmis(hastalik.ozgecmis, hastalik.soygecmis, hastalik.gecmisid)">
+              <ion-icon name="create"></ion-icon>
+              &nbsp;&nbsp; Düzenle &nbsp;&nbsp;
+            </button>
+
+            <button ion-button color="danger" (click)="showHastalikConfirm(hastalik.gecmisid)">
+              <ion-icon name="trash"></ion-icon>
+              &nbsp;&nbsp; Sil &nbsp;&nbsp;
+            </button>
+          </ion-item-options>
+
+        </ion-item-sliding>
+      </ion-list>
+    </ion-list>
+
+    <!-->************** ÖZGEÇMİŞ BURADA BİTİYOR ****************
+    <!-->
+
+
+    <ion-list *ngSwitchCase="'data'">
+
+      <h1 padding>Ölçümler</h1>
+
+      <ion-list *ngIf="!isEmptyArea">
+        <button ion-item *ngFor="let area of areas" (click)="goMeasure(area.sahaid, area.sahaadi, area.boyut)">
+          {{ area.sahaadi }}
+          <p item-end> {{area.eklenmetarihi}}</p>
+        </button>
+      </ion-list>
+
+      <button ion-item detail-none (click)="goAddArea(false)" *ngIf="!isDoctor">
+        <ion-icon name="add" color="primary" item-end></ion-icon>
+        <ion-label color="primary">Yeni Ölçüm Tipi Ekle</ion-label>
+      </button>
+
+      <button ion-item detail-none (click)="goAddArea(true)" *ngIf="isDoctor">
+        <ion-icon name="add" color="primary" item-end></ion-icon>
+        <ion-label color="primary">Yeni Ölçüm Sahası Ekle</ion-label>
+      </button>
+
+      <h1 padding>Otomatik Veriler</h1>
+
+
+    </ion-list>
+
+
+    <!-->**********VERİLER BURADA BİTİYOR *********************
+    <!-->
+
+
+    <ion-list *ngSwitchCase="'profile'">
+
+      <ion-item tappable>
+        <img src="{{userinfo[0].photourl}}" class="pp" *ngIf="userinfo[0].photourl !== null" (click)="openImage(userinfo[0].photourl)"
+        />
+        <img src="assets/icon/male.png" class="pp" *ngIf="userinfo[0].photourl === null && userinfo[0].gender === 'Erkek'" />
+        <img src="assets/icon/female.png" class="pp" *ngIf="userinfo[0].photourl === null && userinfo[0].gender === 'Kadın'" />
+        <button ion-button item-end (click)="presentActionSheetPicture()" text-capitalize>
+          <ion-icon name="camera"></ion-icon>
+          &nbsp; Fotoğraf Yükle
+        </button>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="primary" stacked> TC Kimlik No </ion-label>
+        <ion-input readonly="true" [(ngModel)]=userinfo[0].tckimlik></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="primary" stacked> İsim </ion-label>
+        <ion-input readonly="true" [(ngModel)]=userinfo[0].name></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="primary" stacked> Soyisim </ion-label>
+        <ion-input readonly="true" [(ngModel)]=userinfo[0].surname></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="primary" stacked> Adres </ion-label>
+        <ion-input readonly="true" *ngIf="userinfo[0].address && userinfo[0].address !== 'null'" [(ngModel)]=userinfo[0].address></ion-input>
+        <ion-input readonly="true" type="text" *ngIf="!userinfo[0].address || userinfo[0].address === 'null'" placeholder="Belirtilmemiş"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="primary" stacked> Şehir </ion-label>
+        <ion-input readonly="true" *ngIf="userinfo[0].city && userinfo[0].city !== 'null'" [(ngModel)]=userinfo[0].city></ion-input>
+        <ion-input readonly="true" type="text" *ngIf="!userinfo[0].city || userinfo[0].city === 'null'" placeholder="Belirtilmemiş"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="primary" stacked> Ülke </ion-label>
+        <ion-input readonly="true" *ngIf="userinfo[0].country && userinfo[0].country !== 'null'" [(ngModel)]=userinfo[0].country></ion-input>
+        <ion-input readonly="true" type="text" *ngIf="!userinfo[0].country || userinfo[0].country === 'null'" placeholder="Belirtilmemiş"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="primary" stacked> Cinsiyet </ion-label>
+        <ion-input readonly="true" *ngIf="userinfo[0].gender && userinfo[0].gender !== 'null'" [(ngModel)]=userinfo[0].gender></ion-input>
+        <ion-input readonly="true" type="text" *ngIf="!userinfo[0].gender || userinfo[0].gender === 'null'" placeholder="Belirtilmemiş"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="primary" stacked> Doğum Tarihi </ion-label>
+        <ion-input readonly="true" type="text" *ngIf="userinfo[0].birthdate && userinfo[0].birthdate !== 'null'" [(ngModel)]=userinfo[0].birthdate></ion-input>
+        <ion-input readonly="true" type="text" *ngIf="!userinfo[0].birthdate || userinfo[0].birthdate === 'null'" placeholder="Belirtilmemiş">
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="primary" stacked> Doğum Yeri </ion-label>
+        <ion-input readonly="true" type="text" *ngIf="userinfo[0].birthplace && userinfo[0].birthplace !== 'null'" [(ngModel)]=userinfo[0].birthplace></ion-input>
+        <ion-input readonly="true" type="text" *ngIf="!userinfo[0].birthplace || userinfo[0].birthplace === 'null'" placeholder="Belirtilmemiş"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="primary" stacked>E-Mail </ion-label>
+        <ion-input readonly="true" type="text" *ngIf="userinfo[0].email && userinfo[0].email !== 'null'" [(ngModel)]=userinfo[0].email></ion-input>
+        <ion-input readonly="true" type="text" *ngIf="!userinfo[0].email || userinfo[0].email === 'null'" placeholder="Belirtilmemiş"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="primary" stacked>Cep Telefonu </ion-label>
+        <ion-input readonly="true" type="text" *ngIf="userinfo[0].cellphone && userinfo[0].cellphone !== 'null'" [(ngModel)]=userinfo[0].cellphone></ion-input>
+        <ion-input readonly="true" type="text" *ngIf="!userinfo[0].cellphone || userinfo[0].cellphone === 'null'" placeholder="Belirtilmemiş"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="primary" stacked>Ev Telefonu </ion-label>
+        <ion-input readonly="true" type="text" *ngIf="userinfo[0].homephone && userinfo[0].homephone !== 'null'" [(ngModel)]=userinfo[0].homephone></ion-input>
+        <ion-input readonly="true" type="text" *ngIf="!userinfo[0].homephone || userinfo[0].homephone === 'null'" placeholder="Belirtilmemiş"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="primary" stacked>Kayıt Tarihi </ion-label>
+        <ion-input readonly="true" type="text" *ngIf="userinfo[0].registerdate && userinfo[0].registerdate !== 'null'" [(ngModel)]=userinfo[0].registerdate></ion-input>
+        <ion-input readonly="true" type="text" *ngIf="!userinfo[0].registerdate || userinfo[0].registerdate === 'null'" placeholder="Belirtilmemiş"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="primary" stacked>Meslek</ion-label>
+        <ion-input readonly="true" type="text" *ngIf="userinfo[0].meslek && userinfo[0].meslek !== 'null'" [(ngModel)]=userinfo[0].meslek></ion-input>
+        <ion-input readonly="true" type="text" *ngIf="!userinfo[0].meslek || userinfo[0].meslek === 'null'" placeholder="Belirtilmemiş"></ion-input>
+      </ion-item>
+
+    </ion-list>
+
+  </div>
+
+  <ion-fab right bottom *ngIf="patient === 'visit'">
+    <button ion-fab (click)="itemTapped(4)">
+      <ion-icon name="add"></ion-icon>
+    </button>
+  </ion-fab>
+
+  <ion-fab right bottom *ngIf="patient === 'visit' && type === 1">
+    <button ion-fab (click)="addExamination()">
+      <ion-icon name="add"></ion-icon>
+    </button>
+  </ion-fab>
+  <!-->
+  <ion-fab right bottom (click)="showMenuItems()" #fab *ngIf="patient === 'visit' && type === 1">
+    <button ion-fab mini color="primary">
+      <ion-icon name="create"></ion-icon>
+    </button>
+    <ion-fab-list side="top">
+      <button ion-fab color="secondary" (click)="fabTapped(1, fab, 2)">
+        <ion-icon name="add"></ion-icon>
+      </button>
+      <button ion-fab color="secondary" (click)="fabTapped(2, fab, 2)">
+        <ion-icon name="undo"></ion-icon>
+      </button>
+    </ion-fab-list>
+  </ion-fab>
+  <!-->
+  <!-->
+  <div class="labelContainer" *ngIf="showMenuItem">
+    <div class="container">
+      <a>
+        <div class="label">Manuel Ziyaret Ekle</div>
+      </a>
+      <a (click)="fabTapped(1, fab, 2)">
+        <div class="label">Yeni Muayene Ekle</div>
+      </a>
+    </div>
+  </div>
+  <!-->
+  <ion-fab right bottom *ngIf="patient === 'history'">
+    <button ion-fab (click)="itemTapped(3)">
+      <ion-icon name="add"></ion-icon>
+    </button>
+  </ion-fab>
+
+</ion-content>

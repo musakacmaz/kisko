@@ -1,0 +1,193 @@
+<ion-header>
+
+  <ion-navbar no-border-bottom color="navcolor">
+    <ion-title>
+      {{doktorinfo[0].name}} {{doktorinfo[0].surname}}
+    </ion-title>
+  </ion-navbar>
+
+  <shrinking-segment-header [scrollArea]="myContent" headerHeight="150">
+    <img [src]="doktorinfo[0].fotourl" class="pp" />
+  </shrinking-segment-header>
+
+  <ion-toolbar>
+    <ion-segment [(ngModel)]="doctor" padding color="primary">
+      <ion-segment-button value="hakkında" text-capitalize>
+        Hakkında
+      </ion-segment-button>
+      <ion-segment-button value="yorumlar" text-capitalize>
+        Yorum
+      </ion-segment-button>
+      <ion-segment-button value="videolar" text-capitalize>
+        Video
+      </ion-segment-button>
+      <ion-segment-button value="makaleler" text-capitalize>
+        Makale
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+
+
+</ion-header>
+
+<ion-content padding fullscreen #myContent>
+
+  <div [ngSwitch]="doctor">
+
+    <ion-list *ngSwitchCase="'hakkında'">
+
+      <button ion-item detail-none class="mapbutton" (click)="itemTapped(1)">
+        <ion-icon color="hasta" name="help-circle" item-start></ion-icon>
+        Uzmana Sor
+        <ion-icon color="hasta" name="arrow-dropright" item-end></ion-icon>
+      </button>
+
+      <ion-list-header>
+        Açıklama
+      </ion-list-header>
+
+      <p>{{doktorinfo[0].aciklama}}</p>
+
+      <ion-list-header>
+        Eğitim
+      </ion-list-header>
+
+      <ion-list>
+        <h6>Mezuniyet Tarihi</h6>
+        <p>{{doktorinfo[0].mezuniyettarihi}}</p>
+
+        <h6>Mezuniyet Kurumu</h6>
+        <p>{{doktorinfo[0].mezuniyetkurumu}}</p>
+
+        <h6>Uzmanlık Tarihi</h6>
+        <p>{{doktorinfo[0].uzmanliktarihi}}</p>
+
+        <h6>Uzmanlık Kurumu</h6>
+        <p>{{doktorinfo[0].uzmanlikkurumu}}</p>
+
+      </ion-list>
+
+      <ion-list-header>
+        İletişim
+      </ion-list-header>
+      <ion-list>
+        <ion-item>
+          <ion-icon name="call" item-start *ngIf="!isDoctor" color="hasta"></ion-icon>
+          <ion-icon name="call" item-start *ngIf="isDoctor" color="doktor"></ion-icon>
+          <p>{{doktorinfo[0].tel1}}</p>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="at" item-start *ngIf="!isDoctor" color="hasta"></ion-icon>
+          <ion-icon name="at" item-start *ngIf="isDoctor" color="doktor"></ion-icon>
+          <p>{{doktorinfo[0].eposta}}</p>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="globe" item-start *ngIf="!isDoctor" color="hasta"></ion-icon>
+          <ion-icon name="globe" item-start *ngIf="isDoctor" color="doktor"></ion-icon>
+          <p>{{doktorinfo[0].website}}</p>
+        </ion-item>
+      </ion-list>
+
+      <ion-list-header>
+        Kurum
+      </ion-list-header>
+
+      <ion-list>
+
+        <h6>Kurum Adı</h6>
+        <p>{{doktorinfo[0].kurumadi}}</p>
+
+        <h6>Kurum Adresi</h6>
+        <p>{{doktorinfo[0].adres}}</p>
+
+      </ion-list>
+
+      <button ion-item detail-none (click)="itemTapped(2)" class="mapbutton">
+        <ion-icon name="map" item-start></ion-icon>
+        Haritada gör
+        <ion-icon name="arrow-dropright" item-end></ion-icon>
+      </button>
+    </ion-list>
+
+    <!-->****************HAKKINDA BÖLÜMÜ BURADA BİTİYOR**************!
+    <!-->
+
+    <ion-list *ngSwitchCase="'yorumlar'">
+
+      <ion-list *ngIf="comments">
+
+        <ion-item *ngFor="let comment of comments">
+          <p class="date" text-right>{{comment.tarih}}</p>
+          <h2> {{ comment.hastaadi }} {{ comment.hastasoyadi }} </h2>
+          <p>{{ comment.meslek }} • {{ comment.hastayas }} • {{ comment.gender }} </p>
+          <i> {{ comment.yorumtext }}</i>
+          <rating align="left" [(ngModel)]="comment.puan" readOnly="true" max="5" emptyStarIconName="star-outline" halfStarIconName="star-half"
+            starIconName="star" nullable="false">
+          </rating>
+
+        </ion-item>
+
+      </ion-list>
+
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'videolar'">
+
+        <h2 align="middle" *ngIf="isEmpty">Video Yok</h2>
+
+        <ion-list *ngIf="!isEmptyVideo">
+
+          <ion-card *ngFor="let video of videos">
+
+
+            <ion-item>
+              <h2>{{video.baslik}}</h2>
+              <p class="date2" text-right>{{video.gondermetarihi}}</p>
+            </ion-item>
+
+            <ion-card-content>
+
+              <p>{{video.aciklama}}</p>
+            </ion-card-content>
+
+            <ion-row>
+              <ion-col col-4>
+                <button ion-button icon-left clear small>
+                  <ion-icon name="thumbs-up"></ion-icon>
+                  <div text-capitalize>{{video.begenme}} Beğeni</div>
+                </button>
+              </ion-col>
+              <ion-col col-4>
+                <button ion-button icon-left clear small>
+                  <ion-icon name="eye"></ion-icon>
+                  <div text-capitalize>{{video.goruntuleme}} İzlenme</div>
+                </button>
+              </ion-col>
+              <ion-col col-4>
+                <button ion-button icon-left clear small (click)="playVideo(video.url)">
+                  <ion-icon name="play"></ion-icon>
+                  <div text-capitalize>İzle</div>
+                </button>
+              </ion-col>
+            </ion-row>
+
+          </ion-card>
+
+        </ion-list>
+
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'makaleler'">
+
+      <ion-list-header>
+        Uzmanımızın yayınladığı makaleler
+      </ion-list-header>
+
+    </ion-list>
+
+
+
+
+  </div>
+
+</ion-content>

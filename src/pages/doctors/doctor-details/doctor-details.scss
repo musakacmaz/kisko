@@ -1,0 +1,60 @@
+page-doctor-details{
+  .bg{
+    background-image: url('../assets/image/doctor.png');
+    height: 150px;
+    background-size: cover;
+    //filter: blur(5px);
+    background-position: center;
+}
+.mapbutton {
+
+  background-color: #ecf0f1;
+  border-radius: 10px;
+  margin-bottom: 10px;
+
+}
+.date {
+  font-size: 12px;
+  align-self: flex-start;
+  margin-bottom: -16px;
+}
+
+.date2 {
+  font-size: 12px;
+  align-self: flex-start;
+  margin-top: -20px;
+}
+
+.pp {
+  display: block;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  //box-shadow: -6px 15px 81px 3px rgba(0,0,0,0.75);
+  margin-top: 5%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+shrinking-segment-header {
+
+         //background-color: #363636;
+         color: #fff;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+     }
+
+     ul {
+
+            &.rating li {
+              background: none;
+              color: #ffb400;
+
+              ion-icon {
+                font-size: 16px;
+              }
+            }
+          }
+}

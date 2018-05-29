@@ -1,0 +1,22 @@
+<ion-header>
+	<ion-navbar color="navcolor">
+		<ion-title *ngIf="!isOn">
+      Branş Listesi
+    </ion-title>
+
+    <ion-searchbar *ngIf="isOn" (ionInput)="getSpecialities($event)" placeholder="Branş Ara"></ion-searchbar>
+
+    <ion-buttons end>
+      <button  ion-button icon-only (click)="toggleDetails()" ><ion-icon name="search"></ion-icon></button>
+    </ion-buttons>
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+<ion-list>
+  <button ion-item *ngFor="let brans of branslar" (click)="itemTapped(brans.bransadi, brans.bransid)">
+    {{ brans.bransadi }}
+  </button>
+</ion-list>
+</ion-content>

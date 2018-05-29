@@ -1,0 +1,33 @@
+<ion-header>
+
+  <ion-navbar color="navcolor">
+    <ion-title>Sorular / Cevaplar</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content pullingIcon="refresh" refreshingSpinner="circles" pullMax=400></ion-refresher-content>
+  </ion-refresher>
+
+  <h2 align="middle" *ngIf="isEmpty">Soru Yok</h2>
+
+  <ion-list *ngIf="!isEmpty">
+    <button ion-item *ngFor="let question of questions" (click)="itemTapped(question.soruyanitid)">
+
+      <ion-avatar item-start>
+        <img src="{{question.doktorfoto}}" />
+      </ion-avatar>
+
+      <h2>{{ question.doktoradi }} {{ question.doktorsoyadi }}</h2>
+
+      <h3> {{ question.sorutarihi }} </h3>
+      <p>{{question.soru}}</p>
+      <ion-icon *ngIf="question.yanit !== null" name="checkmark" color="primary" item-end></ion-icon>
+    </button>
+
+  </ion-list>
+
+</ion-content>

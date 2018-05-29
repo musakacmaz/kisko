@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Eczane
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+<ion-list>
+    <button ion-item>
+      <ion-icon name="information" item-start></ion-icon>
+      İlaç Prospektüs Bilgileri
+    </button>
+
+    <button ion-item>
+      <ion-icon name="cube" item-start></ion-icon>
+      Akıllı İlaç Kutusu
+    </button>
+
+    <button ion-item>
+      <ion-icon name="contract" item-start></ion-icon>
+      Temel İlaç Etkileşimleri
+    </button>
+
+    <button ion-item>
+      <ion-icon name="medkit" item-start></ion-icon>
+     Nöbetçi Eczane
+    </button>
+
+    <button ion-item>
+      <ion-icon name="help" item-start></ion-icon>
+      Eczacıya Sor
+    </button>
+
+    <button ion-item (click)="itemTapped($event, 1)">
+      <ion-icon name="navigate" item-start></ion-icon>
+      En Yakın Eczaneler
+    </button>
+</ion-list>
+</ion-content>

@@ -1,0 +1,45 @@
+.ios,.md{
+    page-doctor-details {
+        #map{
+            width: 100%;
+            height: 100%;
+        }
+        .bg{
+            background-image: url('../assets/image/doctor.png');
+            height: 150px;
+            background-size: cover;
+            filter: blur(5px);
+            background-position: center ;
+        }
+        .main-cnt{
+            width: 100%;
+            padding:20px;
+            position: absolute;
+        }
+        .dp{
+            border-radius: 100%;
+            height: 100px;
+            width: 100px;
+            z-index: 10;
+            margin-top:-70px;
+            position: relative;
+            left:50%;
+            margin-right:-50%;
+            transform: translate(-50%,-50%);
+            box-shadow: -6px 15px 81px 3px rgba(0,0,0,0.75);
+        }
+        ion-list ion-item {
+            background-color: #ecf0f1;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .mapbutton {
+
+          background-color: #ecf0f1;
+          border-radius: 10px;
+          margin-bottom: 10px;
+
+        }
+}
+}

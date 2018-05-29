@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-navbar color="navcolor">
+    <ion-title> Manuel Kayıt Detayı </ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="goUpdateVisit()" *ngIf="isDoctor === false">
+        Düzenle
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+
+  <ion-list no-lines>
+
+    <p align="middle">{{userkey}}</p>
+
+    <ion-item>
+      <ion-label color="primary" stacked> Tarih </ion-label>
+      <ion-input *ngIf="manuelvisit[0].formatted && manuelvisit[0].formatted !== 'null'" readonly="true" [(ngModel)]="manuelvisit[0].formatted"></ion-input>
+      <ion-input color="grey" *ngIf="!manuelvisit[0].formatted || manuelvisit[0].formatted === 'null'" readonly="true"> Belirtilmemiş</ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label color="primary" stacked> Kurum </ion-label>
+      <ion-input *ngIf="manuelvisit[0].kurum && manuelvisit[0].kurum !== 'null'" readonly="true" [(ngModel)]="manuelvisit[0].kurum"></ion-input>
+      <ion-input color="grey" *ngIf="!manuelvisit[0].kurum || manuelvisit[0].kurum === 'null'" readonly="true"> Belirtilmemiş</ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label color="primary" stacked> Doktor </ion-label>
+      <ion-input *ngIf="manuelvisit[0].doktor && manuelvisit[0].doktor !== 'null'" readonly="true" [(ngModel)]="manuelvisit[0].doktor"></ion-input>
+      <ion-input color="grey" *ngIf="!manuelvisit[0].doktor || manuelvisit[0].doktor === 'null'" readonly="true"> Belirtilmemiş</ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label color="primary" stacked> Açıklama </ion-label>
+      <ion-textarea rows="4" *ngIf="manuelvisit[0].aciklama && manuelvisit[0].aciklama !== 'null'" readonly="true" [(ngModel)]="manuelvisit[0].aciklama"></ion-textarea>
+      <ion-textarea rows="4" color="grey" *ngIf="!manuelvisit[0].aciklama || manuelvisit[0].aciklama === 'null'" readonly="true"> Belirtilmemiş</ion-textarea>
+    </ion-item>
+
+  </ion-list>
+
+  <ion-list no-lines>
+    <ion-list-header>Belgeler</ion-list-header>
+  </ion-list>
+
+</ion-content>

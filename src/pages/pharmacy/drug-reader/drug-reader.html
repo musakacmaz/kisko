@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-navbar color="navcolor">
+   <ion-title>
+     İlaç Prospektüs Bilgileri
+   </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <button ion-button full icon-left (click)="scanCode()">
+  <ion-icon name="qr-scanner"></ion-icon> Kodu Tara </button>
+
+  <ion-card *ngIf="scannedCode">
+    <ion-card-content>
+      <p> Tarama Sonucu: {{ scannedCode }}</p>
+    </ion-card-content>
+
+  </ion-card>
+
+</ion-content>

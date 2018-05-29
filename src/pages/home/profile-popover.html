@@ -1,0 +1,14 @@
+<ion-content>
+<ion-list radio-group class="popover-page">
+ <div text-center>
+    <ion-item>
+      <ion-label color="primary" stacked>Profiller</ion-label>
+    </ion-item>
+    </div>
+   <button ion-item (click) = "doGetRelation(i)" ion-item *ngFor="let relationUser of relationUser; let i = index">
+   <ion-label *ngIf="relationUser.approved==='true'">{{relationUser.name}} {{relationUser.surname}}</ion-label>
+</button>
+
+    </ion-list>
+
+</ion-content>

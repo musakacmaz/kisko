@@ -1,0 +1,99 @@
+<ion-header>
+    <ion-navbar class = "navbar" align-title="center">
+      <ion-title> Kişisel Sağlık Koçu </ion-title>
+      <ion-buttons end>
+
+        <button no-lines class= "avatar" ion-item detail-none *ngIf="islogin.loginState"  (click) ="itemTapped(5)">
+          <ion-avatar>
+            <img src = "assets/image/{{islogin.avatar}}"/>
+          </ion-avatar>
+        </button>
+
+        <button *ngIf="!islogin.loginState" ion-button icon-only (click) ="itemTapped(5)">
+          <ion-icon name = "ios-log-in"></ion-icon>
+        </button>
+      </ion-buttons>
+
+
+  </ion-navbar>
+  </ion-header>
+
+
+  <ion-content>
+
+    <ion-grid>
+
+      <ion-row>
+        <ion-col>
+          <button class="up-left-icon" ion button clear (click) ="itemTapped(1)"><img src="assets/icon/bul.png"/></button>
+          <button class="up-right-icon" ion button clear (click) ="itemTapped(2)"><img src="assets/icon/sagligim.png"/></button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+            <button class="down-left-icon" ion button clear (click) ="itemTapped(3)"><img src="assets/icon/pills.png"/></button>
+            <button class="down-right-icon" ion button clear (click) ="itemTapped(4)"><img src="assets/icon/alarm.png"/></button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-list>
+
+      <button ion-item>
+        <ion-icon name="calendar" item-start></ion-icon>
+        Randevularım
+      </button>
+
+      <button ion-item>
+        <ion-icon name="notifications" item-start></ion-icon>
+        İlaç Hatırlatmalarım
+      </button>
+
+      <button ion-item>
+        <ion-icon name="text" item-start></ion-icon>
+        Görüşlerim
+      </button>
+
+      <button ion-item>
+        <ion-icon name="open" item-start></ion-icon>
+        Egzersiz Kayıt
+      </button>
+
+      <button ion-item>
+        <ion-icon name="browsers" item-start></ion-icon>
+        Hizmetler
+      </button>
+
+      <button ion-item>
+        <ion-icon name="medical" item-start></ion-icon>
+        Ambulans Çağırma
+      </button>
+
+      <button ion-item>
+        <ion-icon name="medkit" item-start></ion-icon>
+        Evde Bakım Hizmeti
+      </button>
+
+      <button ion-item>
+        <ion-icon name="cart" item-start></ion-icon>
+        Ürünler
+      </button>
+
+       <button ion-item>
+        <ion-icon name="woman" item-start></ion-icon>
+        Hemşire Ara
+      </button>
+
+       <button ion-item>
+        <ion-icon name="transgender" item-start></ion-icon>
+        Genetik Hastalık Değerlendirme
+      </button>
+
+      <button ion-item (click) = "showConfirm()" *ngIf="islogin.loginState">
+        <ion-icon name="log-out" item-start></ion-icon>
+        Çıkış Yap
+      </button>
+
+    </ion-list>
+
+  </ion-content>

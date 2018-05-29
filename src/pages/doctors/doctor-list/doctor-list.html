@@ -1,0 +1,39 @@
+<ion-header>
+	<ion-navbar color="navcolor">
+		<ion-title *ngIf="!isOn">
+      {{speciality}}
+    </ion-title>
+    <ion-searchbar *ngIf="isOn" (ionInput)="getDoctors($event)" placeholder="Uzman Ara"></ion-searchbar>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="toggleDetails()" ><ion-icon name="search"></ion-icon></button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+
+  <ion-item-sliding *ngFor="let doctor of doctors" (click)="itemTapped(doctor.name, doctor.surname, doctor.doktortc)">
+  <button ion-item detail-none>
+    <ion-avatar item-start>
+        <img [src] = "doctor.fotourl" *ngIf="doctor.fotourl !== 'null'"/>
+        <img src = "assets/image/person.jpg" *ngIf="doctor.fotourl === 'null'"/>
+			</ion-avatar>
+    {{ doctor.name }} {{ doctor.surname }}
+    </button>
+
+  <ion-item-options side="right">
+      <button ion-button color="secondary">
+        <ion-icon name="call"></ion-icon>
+        Arama
+      </button>
+      <button ion-button color="danger">
+        <ion-icon name="videocam"></ion-icon>
+        Video
+      </button>
+    </ion-item-options>
+  </ion-item-sliding>
+</ion-list>
+
+</ion-content>

@@ -1,0 +1,1100 @@
+{
+  "items": [
+    {
+      "name": "Sindirim Sistemi",
+      "children": [
+        {
+          "name": "Ülser (mide-bağırsak)",
+          "children": [
+            {
+              "name": "Aktif (yakın zamanda)",
+              "information":
+                "Pork chop jowl capicola porchetta, kielbasa prosciutto boudin bacon pork pig.",
+              "price": "$10"
+            },
+            {
+              "name": "Geçmişte",
+              "information": "Pork chop pastrami landjaeger chuck brisket",
+              "price": "$12"
+            },
+            {
+              "name": "Ailede",
+              "information": "Pork chop pastrami landjaeger chuck brisket",
+              "price": "$12"
+            }
+          ]
+        },
+        {
+          "name": "Reflü",
+          "children": [
+            {
+              "name": "Aktif (yakın zamanda)",
+              "information":
+                "Pork chop jowl capicola porchetta, kielbasa prosciutto boudin bacon pork pig.",
+              "price": "$10"
+            },
+            {
+              "name": "Geçmişte",
+              "information": "Pork chop pastrami landjaeger chuck brisket",
+              "price": "$12"
+            },
+            {
+              "name": "Ailede",
+              "information": "Pork chop pastrami landjaeger chuck brisket",
+              "price": "$12"
+            }
+          ]
+        },
+        {
+          "name": "Çölyak Hastalığı",
+          "children": [
+            {
+              "name": "Aktif (yakın zamanda)",
+              "information":
+                "Pork chop jowl capicola porchetta, kielbasa prosciutto boudin bacon pork pig.",
+              "price": "$10"
+            },
+            {
+              "name": "Geçmişte",
+              "information": "Pork chop pastrami landjaeger chuck brisket",
+              "price": "$12"
+            },
+            {
+              "name": "Ailede",
+              "information": "Pork chop pastrami landjaeger chuck brisket",
+              "price": "$12"
+            }
+          ]
+        },
+        {
+          "name": "Ülsereatif Kolit",
+          "children": [
+            {
+              "name": "Aktif (yakın zamanda)",
+              "information":
+                "Pork chop jowl capicola porchetta, kielbasa prosciutto boudin bacon pork pig.",
+              "price": "$10"
+            },
+            {
+              "name": "Geçmişte",
+              "information": "Pork chop pastrami landjaeger chuck brisket",
+              "price": "$12"
+            },
+            {
+              "name": "Ailede",
+              "information": "Pork chop pastrami landjaeger chuck brisket",
+              "price": "$12"
+            }
+          ]
+        },
+        {
+          "name": "Crohn Hastalığı",
+          "children": [
+            {
+              "name": "Aktif (yakın zamanda)",
+              "information":
+                "Pork chop jowl capicola porchetta, kielbasa prosciutto boudin bacon pork pig.",
+              "price": "$10"
+            },
+            {
+              "name": "Geçmişte",
+              "information": "Pork chop pastrami landjaeger chuck brisket",
+              "price": "$12"
+            },
+            {
+              "name": "Ailede",
+              "information": "Pork chop pastrami landjaeger chuck brisket",
+              "price": "$12"
+            }
+          ]
+        },
+        {
+          "name": "Hepatit (karaciğer iltihabı)",
+          "children": [
+            {
+              "name": "Aktif (yakın zamanda)",
+              "information":
+                "Pork chop jowl capicola porchetta, kielbasa prosciutto boudin bacon pork pig.",
+              "price": "$10"
+            },
+            {
+              "name": "Geçmişte",
+              "information": "Pork chop pastrami landjaeger chuck brisket",
+              "price": "$12"
+            },
+            {
+              "name": "Ailede",
+              "information": "Pork chop pastrami landjaeger chuck brisket",
+              "price": "$12"
+            }
+          ]
+        },
+        {
+          "name": "Karaciğer Yağlanması",
+          "children": [
+            {
+              "name": "Aktif (yakın zamanda)",
+              "information":
+                "Pork chop jowl capicola porchetta, kielbasa prosciutto boudin bacon pork pig.",
+              "price": "$10"
+            },
+            {
+              "name": "Geçmişte",
+              "information": "Pork chop pastrami landjaeger chuck brisket",
+              "price": "$12"
+            },
+            {
+              "name": "Ailede",
+              "information": "Pork chop pastrami landjaeger chuck brisket",
+              "price": "$12"
+            }
+          ]
+        },
+        {
+          "name": "Safra Taşı - İltihabı",
+          "children": [
+            {
+              "name": "Aktif (yakın zamanda)",
+              "information":
+                "Pork chop jowl capicola porchetta, kielbasa prosciutto boudin bacon pork pig.",
+              "price": "$10"
+            },
+            {
+              "name": "Geçmişte",
+              "information": "Pork chop pastrami landjaeger chuck brisket",
+              "price": "$12"
+            },
+            {
+              "name": "Ailede",
+              "information": "Pork chop pastrami landjaeger chuck brisket",
+              "price": "$12"
+            }
+          ]
+        },
+        {
+          "name": "Diğer",
+          "children": [
+            {
+              "name": "Aktif (yakın zamanda)",
+              "information":
+                "Pork chop jowl capicola porchetta, kielbasa prosciutto boudin bacon pork pig.",
+              "price": "$10"
+            },
+            {
+              "name": "Geçmişte",
+              "information": "Pork chop pastrami landjaeger chuck brisket",
+              "price": "$12"
+            },
+            {
+              "name": "Ailede",
+              "information": "Pork chop pastrami landjaeger chuck brisket",
+              "price": "$12"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Kalp-Damar Sistemi",
+      "children": [
+        {
+          "name": "Hipertansiyon",
+          "children": [
+            {
+              "name": "Aktif (yakın zamanda)",
+              "information":
+                "Pork chop jowl capicola porchetta, kielbasa prosciutto boudin bacon pork pig.",
+              "price": "$10"
+            },
+            {
+              "name": "Geçmişte",
+              "information": "Pork chop pastrami landjaeger chuck brisket",
+              "price": "$12"
+            },
+            {
+              "name": "Ailede",
+              "information": "Pork chop pastrami landjaeger chuck brisket",
+              "price": "$12"
+            }
+          ]
+        },
+        {
+          "name": "Yüksek Kolesterol-Trigliserid",
+          "children": [
+            {
+              "name": "Aktif (yakın zamanda)",
+              "information":
+                "Pork chop jowl capicola porchetta, kielbasa prosciutto boudin bacon pork pig.",
+              "price": "$10"
+            },
+            {
+              "name": "Geçmişte",
+              "information": "Pork chop pastrami landjaeger chuck brisket",
+              "price": "$12"
+            },
+            {
+              "name": "Ailede",
+              "information": "Pork chop pastrami landjaeger chuck brisket",
+              "price": "$12"
+            }
+          ]
+        },
+        {
+          "name": "Kalp Krizi",
+          "children": [
+            {
+              "name": "Aktif (yakın zamanda)",
+              "information":
+                "Pork chop jowl capicola porchetta, kielbasa prosciutto boudin bacon pork pig.",
+              "price": "$10"
+            },
+            {
+              "name": "Geçmişte",
+              "information": "Pork chop pastrami landjaeger chuck brisket",
+              "price": "$12"
+            },
+            {
+              "name": "Ailede",
+              "information": "Pork chop pastrami landjaeger chuck brisket",
+              "price": "$12"
+            }
+          ]
+        },
+        {
+          "name": "Kalpte Ritim Bozukluğu",
+          "children": [
+            {
+              "name": "Aktif (yakın zamanda)",
+              "information":
+                "Pork chop jowl capicola porchetta, kielbasa prosciutto boudin bacon pork pig.",
+              "price": "$10"
+            },
+            {
+              "name": "Geçmişte",
+              "information": "Pork chop pastrami landjaeger chuck brisket",
+              "price": "$12"
+            },
+            {
+              "name": "Ailede",
+              "information": "Pork chop pastrami landjaeger chuck brisket",
+              "price": "$12"
+            }
+          ]
+        },
+        {
+          "name": "Kalp Kapak Hastalığı",
+          "children": [
+            {
+              "name": "Aktif (yakın zamanda)",
+              "information":
+                "Pork chop jowl capicola porchetta, kielbasa prosciutto boudin bacon pork pig.",
+              "price": "$10"
+            },
+            {
+              "name": "Geçmişte",
+              "information": "Pork chop pastrami landjaeger chuck brisket",
+              "price": "$12"
+            },
+            {
+              "name": "Ailede",
+              "information": "Pork chop pastrami landjaeger chuck brisket",
+              "price": "$12"
+            }
+          ]
+        },
+        {
+          "name": "Kalp Yetmezliği",
+          "children": [
+            {
+              "name": "Aktif (yakın zamanda)",
+              "information":
+                "Pork chop jowl capicola porchetta, kielbasa prosciutto boudin bacon pork pig.",
+              "price": "$10"
+            },
+            {
+              "name": "Geçmişte",
+              "information": "Pork chop pastrami landjaeger chuck brisket",
+              "price": "$12"
+            },
+            {
+              "name": "Ailede",
+              "information": "Pork chop pastrami landjaeger chuck brisket",
+              "price": "$12"
+            }
+          ]
+        },
+        {
+          "name": "Diğer",
+          "children": [
+            {
+              "name": "Aktif (yakın zamanda)",
+              "information":
+                "Pork chop jowl capicola porchetta, kielbasa prosciutto boudin bacon pork pig.",
+              "price": "$10"
+            },
+            {
+              "name": "Geçmişte",
+              "information": "Pork chop pastrami landjaeger chuck brisket",
+              "price": "$12"
+            },
+            {
+              "name": "Ailede",
+              "information": "Pork chop pastrami landjaeger chuck brisket",
+              "price": "$12"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Endokrin Sistem - Metabolizma",
+      "children": [
+        {
+          "name": "Diabet (Şeker Hastalığı)",
+          "children": [
+            {
+              "name": "Aktif (yakın zamanda)",
+              "information":
+                "Pork chop jowl capicola porchetta, kielbasa prosciutto boudin bacon pork pig.",
+              "price": "$10"
+            },
+            {
+              "name": "Geçmişte",
+              "information": "Pork chop pastrami landjaeger chuck brisket",
+              "price": "$12"
+            },
+            {
+              "name": "Ailede",
+              "information": "Pork chop pastrami landjaeger chuck brisket",
+              "price": "$12"
+            }
+          ]
+        },
+        {
+          "name": "Guatr",
+          "children": [
+            {
+              "name": "Aktif (yakın zamanda)",
+              "information":
+                "Pork chop jowl capicola porchetta, kielbasa prosciutto boudin bacon pork pig.",
+              "price": "$10"
+            },
+            {
+              "name": "Geçmişte",
+              "information": "Pork chop pastrami landjaeger chuck brisket",
+              "price": "$12"
+            },
+            {
+              "name": "Ailede",
+              "information": "Pork chop pastrami landjaeger chuck brisket",
+              "price": "$12"
+            }
+          ]
+        },
+        {
+          "name": "Hipotiroidi (örn: Hashimato hastalığı)",
+          "children": [
+            {
+              "name": "Aktif (yakın zamanda)",
+              "information":
+                "Pork chop jowl capicola porchetta, kielbasa prosciutto boudin bacon pork pig.",
+              "price": "$10"
+            },
+            {
+              "name": "Geçmişte",
+              "information": "Pork chop pastrami landjaeger chuck brisket",
+              "price": "$12"
+            },
+            {
+              "name": "Ailede",
+              "information": "Pork chop pastrami landjaeger chuck brisket",
+              "price": "$12"
+            }
+          ]
+        },
+        {
+          "name": "Hipertiroidi (örn: Graves  hastalığı)",
+          "children": [
+            {
+              "name": "Aktif (yakın zamanda)",
+              "information":
+                "Pork chop jowl capicola porchetta, kielbasa prosciutto boudin bacon pork pig.",
+              "price": "$10"
+            },
+            {
+              "name": "Geçmişte",
+              "information": "Pork chop pastrami landjaeger chuck brisket",
+              "price": "$12"
+            },
+            {
+              "name": "Ailede",
+              "information": "Pork chop pastrami landjaeger chuck brisket",
+              "price": "$12"
+            }
+          ]
+        },
+        {
+          "name": "Diğer",
+          "children": [
+            {
+              "name": "Aktif (yakın zamanda)",
+              "information":
+                "Pork chop jowl capicola porchetta, kielbasa prosciutto boudin bacon pork pig.",
+              "price": "$10"
+            },
+            {
+              "name": "Geçmişte",
+              "information": "Pork chop pastrami landjaeger chuck brisket",
+              "price": "$12"
+            },
+            {
+              "name": "Ailede",
+              "information": "Pork chop pastrami landjaeger chuck brisket",
+              "price": "$12"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Solunum Sistemi",
+      "children": [
+        {
+          "name": "Astım",
+          "children": [
+            {
+              "name": "Aktif (yakın zamanda)",
+              "information":
+                "Pork chop jowl capicola porchetta, kielbasa prosciutto boudin bacon pork pig.",
+              "price": "$10"
+            },
+            {
+              "name": "Geçmişte",
+              "information": "Pork chop pastrami landjaeger chuck brisket",
+              "price": "$12"
+            },
+            {
+              "name": "Ailede",
+              "information": "Pork chop pastrami landjaeger chuck brisket",
+              "price": "$12"
+            }
+          ]
+        },
+        {
+          "name": "Bronşit",
+          "children": [
+            {
+              "name": "Aktif (yakın zamanda)",
+              "information":
+                "Pork chop jowl capicola porchetta, kielbasa prosciutto boudin bacon pork pig.",
+              "price": "$10"
+            },
+            {
+              "name": "Geçmişte",
+              "information": "Pork chop pastrami landjaeger chuck brisket",
+              "price": "$12"
+            },
+            {
+              "name": "Ailede",
+              "information": "Pork chop pastrami landjaeger chuck brisket",
+              "price": "$12"
+            }
+          ]
+        },
+        {
+          "name": "Zatürre (pnömoni)",
+          "children": [
+            {
+              "name": "Aktif (yakın zamanda)",
+              "information":
+                "Pork chop jowl capicola porchetta, kielbasa prosciutto boudin bacon pork pig.",
+              "price": "$10"
+            },
+            {
+              "name": "Geçmişte",
+              "information": "Pork chop pastrami landjaeger chuck brisket",
+              "price": "$12"
+            },
+            {
+              "name": "Ailede",
+              "information": "Pork chop pastrami landjaeger chuck brisket",
+              "price": "$12"
+            }
+          ]
+        },
+        {
+          "name": "KOAH",
+          "children": [
+            {
+              "name": "Aktif (yakın zamanda)",
+              "information":
+                "Pork chop jowl capicola porchetta, kielbasa prosciutto boudin bacon pork pig.",
+              "price": "$10"
+            },
+            {
+              "name": "Geçmişte",
+              "information": "Pork chop pastrami landjaeger chuck brisket",
+              "price": "$12"
+            },
+            {
+              "name": "Ailede",
+              "information": "Pork chop pastrami landjaeger chuck brisket",
+              "price": "$12"
+            }
+          ]
+        },
+        {
+          "name": "Uyku Apnesi",
+          "children": [
+            {
+              "name": "Aktif (yakın zamanda)",
+              "information":
+                "Pork chop jowl capicola porchetta, kielbasa prosciutto boudin bacon pork pig.",
+              "price": "$10"
+            },
+            {
+              "name": "Geçmişte",
+              "information": "Pork chop pastrami landjaeger chuck brisket",
+              "price": "$12"
+            },
+            {
+              "name": "Ailede",
+              "information": "Pork chop pastrami landjaeger chuck brisket",
+              "price": "$12"
+            }
+          ]
+        },
+        {
+          "name": "Diğer",
+          "children": [
+            {
+              "name": "Aktif (yakın zamanda)",
+              "information":
+                "Pork chop jowl capicola porchetta, kielbasa prosciutto boudin bacon pork pig.",
+              "price": "$10"
+            },
+            {
+              "name": "Geçmişte",
+              "information": "Pork chop pastrami landjaeger chuck brisket",
+              "price": "$12"
+            },
+            {
+              "name": "Ailede",
+              "information": "Pork chop pastrami landjaeger chuck brisket",
+              "price": "$12"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Üriner (Boşaltım) Sistem",
+      "children": [
+        {
+          "name": "Böbrek Taşı",
+          "children": [
+            {
+              "name": "Aktif (yakın zamanda)",
+              "information":
+                "Pork chop jowl capicola porchetta, kielbasa prosciutto boudin bacon pork pig.",
+              "price": "$10"
+            },
+            {
+              "name": "Geçmişte",
+              "information": "Pork chop pastrami landjaeger chuck brisket",
+              "price": "$12"
+            },
+            {
+              "name": "Ailede",
+              "information": "Pork chop pastrami landjaeger chuck brisket",
+              "price": "$12"
+            }
+          ]
+        },
+        {
+          "name": "Böbrek İltihabı (nefrit)",
+          "children": [
+            {
+              "name": "Aktif (yakın zamanda)",
+              "information":
+                "Pork chop jowl capicola porchetta, kielbasa prosciutto boudin bacon pork pig.",
+              "price": "$10"
+            },
+            {
+              "name": "Geçmişte",
+              "information": "Pork chop pastrami landjaeger chuck brisket",
+              "price": "$12"
+            },
+            {
+              "name": "Ailede",
+              "information": "Pork chop pastrami landjaeger chuck brisket",
+              "price": "$12"
+            }
+          ]
+        },
+        {
+          "name": "Böbrek Kisti",
+          "children": [
+            {
+              "name": "Aktif (yakın zamanda)",
+              "information":
+                "Pork chop jowl capicola porchetta, kielbasa prosciutto boudin bacon pork pig.",
+              "price": "$10"
+            },
+            {
+              "name": "Geçmişte",
+              "information": "Pork chop pastrami landjaeger chuck brisket",
+              "price": "$12"
+            },
+            {
+              "name": "Ailede",
+              "information": "Pork chop pastrami landjaeger chuck brisket",
+              "price": "$12"
+            }
+          ]
+        },
+        {
+          "name": "İdrar Yolu Enfeksiyonu",
+          "children": [
+            {
+              "name": "Aktif (yakın zamanda)",
+              "information":
+                "Pork chop jowl capicola porchetta, kielbasa prosciutto boudin bacon pork pig.",
+              "price": "$10"
+            },
+            {
+              "name": "Geçmişte",
+              "information": "Pork chop pastrami landjaeger chuck brisket",
+              "price": "$12"
+            },
+            {
+              "name": "Ailede",
+              "information": "Pork chop pastrami landjaeger chuck brisket",
+              "price": "$12"
+            }
+          ]
+        },
+        {
+          "name": "Mesane Enfeksiyonu (sistit)",
+          "children": [
+            {
+              "name": "Aktif (yakın zamanda)",
+              "information":
+                "Pork chop jowl capicola porchetta, kielbasa prosciutto boudin bacon pork pig.",
+              "price": "$10"
+            },
+            {
+              "name": "Geçmişte",
+              "information": "Pork chop pastrami landjaeger chuck brisket",
+              "price": "$12"
+            },
+            {
+              "name": "Ailede",
+              "information": "Pork chop pastrami landjaeger chuck brisket",
+              "price": "$12"
+            }
+          ]
+        },
+        {
+          "name": "Diğer",
+          "children": [
+            {
+              "name": "Aktif (yakın zamanda)",
+              "information":
+                "Pork chop jowl capicola porchetta, kielbasa prosciutto boudin bacon pork pig.",
+              "price": "$10"
+            },
+            {
+              "name": "Geçmişte",
+              "information": "Pork chop pastrami landjaeger chuck brisket",
+              "price": "$12"
+            },
+            {
+              "name": "Ailede",
+              "information": "Pork chop pastrami landjaeger chuck brisket",
+              "price": "$12"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Genital Sistem",
+      "children": [
+        {
+          "name": "Prostatit",
+          "children": [
+            {
+              "name": "Aktif (yakın zamanda)",
+              "information":
+                "Pork chop jowl capicola porchetta, kielbasa prosciutto boudin bacon pork pig.",
+              "price": "$10"
+            },
+            {
+              "name": "Geçmişte",
+              "information": "Pork chop pastrami landjaeger chuck brisket",
+              "price": "$12"
+            },
+            {
+              "name": "Ailede",
+              "information": "Pork chop pastrami landjaeger chuck brisket",
+              "price": "$12"
+            }
+          ]
+        },
+        {
+          "name": "Epididimit-Orşit (testis iltihabı)",
+          "children": [
+            {
+              "name": "Aktif (yakın zamanda)",
+              "information":
+                "Pork chop jowl capicola porchetta, kielbasa prosciutto boudin bacon pork pig.",
+              "price": "$10"
+            },
+            {
+              "name": "Geçmişte",
+              "information": "Pork chop pastrami landjaeger chuck brisket",
+              "price": "$12"
+            },
+            {
+              "name": "Ailede",
+              "information": "Pork chop pastrami landjaeger chuck brisket",
+              "price": "$12"
+            }
+          ]
+        },
+        {
+          "name": "Varikosel",
+          "children": [
+            {
+              "name": "Aktif (yakın zamanda)",
+              "information":
+                "Pork chop jowl capicola porchetta, kielbasa prosciutto boudin bacon pork pig.",
+              "price": "$10"
+            },
+            {
+              "name": "Geçmişte",
+              "information": "Pork chop pastrami landjaeger chuck brisket",
+              "price": "$12"
+            },
+            {
+              "name": "Ailede",
+              "information": "Pork chop pastrami landjaeger chuck brisket",
+              "price": "$12"
+            }
+          ]
+        },
+        {
+          "name": "Diğer",
+          "children": [
+            {
+              "name": "Aktif (yakın zamanda)",
+              "information":
+                "Pork chop jowl capicola porchetta, kielbasa prosciutto boudin bacon pork pig.",
+              "price": "$10"
+            },
+            {
+              "name": "Geçmişte",
+              "information": "Pork chop pastrami landjaeger chuck brisket",
+              "price": "$12"
+            },
+            {
+              "name": "Ailede",
+              "information": "Pork chop pastrami landjaeger chuck brisket",
+              "price": "$12"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Dermatoloji (Cilt)",
+      "children": [
+        {
+          "name": "Egzema",
+          "children": [
+            {
+              "name": "Aktif (yakın zamanda)",
+              "information":
+                "Pork chop jowl capicola porchetta, kielbasa prosciutto boudin bacon pork pig.",
+              "price": "$10"
+            },
+            {
+              "name": "Geçmişte",
+              "information": "Pork chop pastrami landjaeger chuck brisket",
+              "price": "$12"
+            },
+            {
+              "name": "Ailede",
+              "information": "Pork chop pastrami landjaeger chuck brisket",
+              "price": "$12"
+            }
+          ]
+        },
+        {
+          "name": "Sedef",
+          "children": [
+            {
+              "name": "Aktif (yakın zamanda)",
+              "information":
+                "Pork chop jowl capicola porchetta, kielbasa prosciutto boudin bacon pork pig.",
+              "price": "$10"
+            },
+            {
+              "name": "Geçmişte",
+              "information": "Pork chop pastrami landjaeger chuck brisket",
+              "price": "$12"
+            },
+            {
+              "name": "Ailede",
+              "information": "Pork chop pastrami landjaeger chuck brisket",
+              "price": "$12"
+            }
+          ]
+        },
+        {
+          "name": "Akne",
+          "children": [
+            {
+              "name": "Aktif (yakın zamanda)",
+              "information":
+                "Pork chop jowl capicola porchetta, kielbasa prosciutto boudin bacon pork pig.",
+              "price": "$10"
+            },
+            {
+              "name": "Geçmişte",
+              "information": "Pork chop pastrami landjaeger chuck brisket",
+              "price": "$12"
+            },
+            {
+              "name": "Ailede",
+              "information": "Pork chop pastrami landjaeger chuck brisket",
+              "price": "$12"
+            }
+          ]
+        },
+        {
+          "name": "Diğer",
+          "children": [
+            {
+              "name": "Aktif (yakın zamanda)",
+              "information":
+                "Pork chop jowl capicola porchetta, kielbasa prosciutto boudin bacon pork pig.",
+              "price": "$10"
+            },
+            {
+              "name": "Geçmişte",
+              "information": "Pork chop pastrami landjaeger chuck brisket",
+              "price": "$12"
+            },
+            {
+              "name": "Ailede",
+              "information": "Pork chop pastrami landjaeger chuck brisket",
+              "price": "$12"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Bağışıklık Sistemi",
+      "children": [
+        {
+          "name": "Alerji",
+          "children": [
+            {
+              "name": "Aktif (yakın zamanda)",
+              "information":
+                "Pork chop jowl capicola porchetta, kielbasa prosciutto boudin bacon pork pig.",
+              "price": "$10"
+            },
+            {
+              "name": "Geçmişte",
+              "information": "Pork chop pastrami landjaeger chuck brisket",
+              "price": "$12"
+            },
+            {
+              "name": "Ailede",
+              "information": "Pork chop pastrami landjaeger chuck brisket",
+              "price": "$12"
+            }
+          ]
+        },
+        {
+          "name": "Romatizma",
+          "children": [
+            {
+              "name": "Aktif (yakın zamanda)",
+              "information":
+                "Pork chop jowl capicola porchetta, kielbasa prosciutto boudin bacon pork pig.",
+              "price": "$10"
+            },
+            {
+              "name": "Geçmişte",
+              "information": "Pork chop pastrami landjaeger chuck brisket",
+              "price": "$12"
+            },
+            {
+              "name": "Ailede",
+              "information": "Pork chop pastrami landjaeger chuck brisket",
+              "price": "$12"
+            }
+          ]
+        },
+        {
+          "name": "Diğer",
+          "children": [
+            {
+              "name": "Aktif (yakın zamanda)",
+              "information":
+                "Pork chop jowl capicola porchetta, kielbasa prosciutto boudin bacon pork pig.",
+              "price": "$10"
+            },
+            {
+              "name": "Geçmişte",
+              "information": "Pork chop pastrami landjaeger chuck brisket",
+              "price": "$12"
+            },
+            {
+              "name": "Ailede",
+              "information": "Pork chop pastrami landjaeger chuck brisket",
+              "price": "$12"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Kanser",
+      "children": [
+        {
+          "name": "Meme Kanseri",
+          "children": [
+            {
+              "name": "Aktif (yakın zamanda)",
+              "information":
+                "Pork chop jowl capicola porchetta, kielbasa prosciutto boudin bacon pork pig.",
+              "price": "$10"
+            },
+            {
+              "name": "Geçmişte",
+              "information": "Pork chop pastrami landjaeger chuck brisket",
+              "price": "$12"
+            },
+            {
+              "name": "Ailede",
+              "information": "Pork chop pastrami landjaeger chuck brisket",
+              "price": "$12"
+            }
+          ]
+        },
+        {
+          "name": "Akciğer Kanseri",
+          "children": [
+            {
+              "name": "Aktif (yakın zamanda)",
+              "information":
+                "Pork chop jowl capicola porchetta, kielbasa prosciutto boudin bacon pork pig.",
+              "price": "$10"
+            },
+            {
+              "name": "Geçmişte",
+              "information": "Pork chop pastrami landjaeger chuck brisket",
+              "price": "$12"
+            },
+            {
+              "name": "Ailede",
+              "information": "Pork chop pastrami landjaeger chuck brisket",
+              "price": "$12"
+            }
+          ]
+        },
+        {
+          "name": "Kolon (barsak) Kanseri",
+          "children": [
+            {
+              "name": "Aktif (yakın zamanda)",
+              "information":
+                "Pork chop jowl capicola porchetta, kielbasa prosciutto boudin bacon pork pig.",
+              "price": "$10"
+            },
+            {
+              "name": "Geçmişte",
+              "information": "Pork chop pastrami landjaeger chuck brisket",
+              "price": "$12"
+            },
+            {
+              "name": "Ailede",
+              "information": "Pork chop pastrami landjaeger chuck brisket",
+              "price": "$12"
+            }
+          ]
+        },
+        {
+          "name": "Yumurtalık Kanseri",
+          "children": [
+            {
+              "name": "Aktif (yakın zamanda)",
+              "information":
+                "Pork chop jowl capicola porchetta, kielbasa prosciutto boudin bacon pork pig.",
+              "price": "$10"
+            },
+            {
+              "name": "Geçmişte",
+              "information": "Pork chop pastrami landjaeger chuck brisket",
+              "price": "$12"
+            },
+            {
+              "name": "Ailede",
+              "information": "Pork chop pastrami landjaeger chuck brisket",
+              "price": "$12"
+            }
+          ]
+        },
+        {
+          "name": "Rahim Kanseri",
+          "children": [
+            {
+              "name": "Aktif (yakın zamanda)",
+              "information":
+                "Pork chop jowl capicola porchetta, kielbasa prosciutto boudin bacon pork pig.",
+              "price": "$10"
+            },
+            {
+              "name": "Geçmişte",
+              "information": "Pork chop pastrami landjaeger chuck brisket",
+              "price": "$12"
+            },
+            {
+              "name": "Ailede",
+              "information": "Pork chop pastrami landjaeger chuck brisket",
+              "price": "$12"
+            }
+          ]
+        },
+        {
+          "name": "Diğer",
+          "children": [
+            {
+              "name": "Aktif (yakın zamanda)",
+              "information":
+                "Pork chop jowl capicola porchetta, kielbasa prosciutto boudin bacon pork pig.",
+              "price": "$10"
+            },
+            {
+              "name": "Geçmişte",
+              "information": "Pork chop pastrami landjaeger chuck brisket",
+              "price": "$12"
+            },
+            {
+              "name": "Ailede",
+              "information": "Pork chop pastrami landjaeger chuck brisket",
+              "price": "$12"
+            }
+          ]
+        }
+      ]
+    }
+
+  ]
+}

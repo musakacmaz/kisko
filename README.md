@@ -1,2 +1,2 @@
 # kisko
-this is an medical app that built with ionic.
+this is a medical app that built with ionic.
